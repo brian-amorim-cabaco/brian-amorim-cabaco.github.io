@@ -186,3 +186,7 @@ a:hover, a:focus, a:active {
 #sideNav .navbar-nav .nav-item .nav-link {
     color: #fff; 
 }
+/* Custom rule to make our new buttons more square-ish */
+.btn-primary {
+    border-radius: 0.5rem !important; /* Slightly rounded corners, or 0 for sharp square */
+}
