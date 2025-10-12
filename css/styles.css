@@ -22,31 +22,22 @@ body {
 /* --- Two-Column Layout --- */
 .page-wrapper {
     display: flex;
-    min-height: 100vh;
+    /* min-height: 100vh; -- REMOVED */
 }
 
 .sidebar {
-    width: 280px;
+    width: 180px; /* Make the sidebar narrower */
     background-color: var(--light-grey);
     border-right: 1px solid #e0e0e0;
-    padding: 2.5rem;
-    position: fixed;
-    height: 100%;
+    padding: 2.5rem 1.5rem; /* Adjust padding */
+    /* position: fixed; -- REMOVED */
+    height: auto; /* Allow height to adjust */
+    flex-shrink: 0; /* Prevent sidebar from shrinking */
 }
 
 .main-content {
     flex-grow: 1;
-    margin-left: 280px; /* Same as sidebar width */
     padding: 0;
-}
-
-/* --- Sidebar Styles --- */
-.site-title {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--dark-text);
-    text-decoration: none;
-    line-height: 1.3;
 }
 .site-title:hover {
     color: var(--primary-blue);
@@ -184,37 +175,80 @@ h2 {
 
 /* --- Responsive for Mobile --- */
 @media (max-width: 900px) {
+    /* The header will still be full width */
+
     .page-wrapper {
-        flex-direction: column;
+        flex-direction: column; /* Stack sidebar and main content vertically */
     }
 
     .sidebar {
-        position: static;
-        width: 100%;
-        height: auto;
+        width: 100%; /* Sidebar takes full width */
+        padding: 1.5rem 1rem;
+        border-right: none;
+        border-bottom: 1px solid #e0e0e0; /* Add bottom border */
         text-align: center;
+    }
+
+    .main-nav ul {
+        display: flex; /* Make buttons horizontal */
+        justify-content: center;
+        flex-wrap: wrap; /* Allow buttons to wrap */
+    }
+
+    .main-nav li {
+        margin: 0.25rem 0.5rem; /* Space buttons horizontally */
     }
 
     .main-content {
-        margin-left: 0;
+        margin-left: 0; /* No left margin on mobile */
+    }
+
+    .main-header h1 {
+        font-size: 2.5rem; /* Smaller header title on mobile */
     }
 
     .content-section {
-        padding: 2rem 1.5rem;
+        padding: 2rem 1.5rem; /* Reduce padding on mobile */
     }
 
     .about-flex {
-        flex-direction: column-reverse;
+        flex-direction: column; /* Stack image and text vertically */
         align-items: center;
         text-align: center;
+        gap: 1.5rem;
+    }
+
+    .about-image img {
+        width: 100px; /* Smaller headshot on mobile */
+        height: 100px;
     }
 }
+* New styles for the about section */
+.about-section {
+    padding-top: 2rem; /* Reduce padding at the top of the about section */
+}
 
+.about-flex {
+    display: flex;
+    gap: 2.5rem; /* Space between image and text */
+    align-items: flex-start; /* Align items to the top */
+}
 
-.sidebar-headshot img {
-    width: 120px;       /* This sets the new, smaller width */
-    height: 120px;      /* This sets the new, smaller height */
-    border-radius: 0;   /* This keeps it a square */
+.about-image {
+    flex-shrink: 0; /* Prevent image from shrinking */
+    text-align: center; /* Center the image if it's smaller */
+}
+
+.about-image img {
+    width: 140px; /* Size for the headshot in main content */
+    height: 140px;
+    border-radius: 4px; /* Slightly rounded corners for the square */
     object-fit: cover;
-    border: 1px solid #e0e0e0; /* This adds the light grey border */
+    border: 1px solid #e0e0e0; /* Subtle border */
+}
+
+.about-text {
+    flex-grow: 1; /* Allow text to take up remaining space */
+    line-height: 1.7; /* Improve readability */
+    font-size: 1.05rem;
 }
