@@ -58,3 +58,66 @@ section.resume-section .resume-section-content {
   width: 100%;
   max-width: 75rem; /* Prevents text from becoming too wide on large screens */
 }
+/* Main Top Banner (The Ribbon) */
+.top-banner {
+    padding-top: 2rem;    /* Increased padding to make the banner taller */
+    padding-bottom: 2rem; /* Increased padding to make the banner taller */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* A soft shadow underneath */
+}
+
+/* The Centered Profile Picture */
+.img-profile-center {
+    width: 10rem;  /* Increased width to make the picture bigger */
+    height: 10rem; /* Increased height to make the picture bigger */
+    border: 0.5rem solid rgba(255, 255, 255, 0.3); /* Thicker, softer border */
+}
+
+/* The Name in the Banner */
+.top-banner h1 {
+    font-size: 2.5rem; /* A good size for the name in the banner */
+    font-weight: 700;
+    text-align: center; /* Ensures the name is centered under the picture */
+}
+
+/* The Secondary Navigation Bar (About, Research, etc.) */
+.main-nav {
+    background-color: #f8f9fa !important; /* A light grey background */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: sticky; /* Makes it stick to the top when you scroll */
+    top: 0;
+    z-index: 1020; /* Keeps it on top of other content */
+}
+
+/* The Links in the Secondary Nav Bar */
+.main-nav .nav-link {
+    font-weight: 700;
+    color: #343a40 !important; /* A dark color for the links */
+    padding: 1rem 1.5rem;
+}
+
+/* Styling for the Main Content Area */
+section.resume-section {
+    padding-top: 4rem !important;    /* Space at the top of each section */
+    padding-left: 5rem !important;   /* MORE space on the left side */
+    padding-right: 5rem !important;  /* MORE space on the right side */
+}
+
+/* Justify the paragraph text */
+section.resume-section p {
+    text-align: justify;
+}
+
+/* Adjustments for smaller screens (tablets and phones) */
+@media (max-width: 991px) {
+    section.resume-section {
+        padding-left: 1.5rem !important; /* Less padding on small screens */
+        padding-right: 1.5rem !important;
+    }
+    .img-profile-center {
+        width: 8rem; /* Slightly smaller picture on small screens */
+        height: 8rem;
+    }
+    .top-banner h1 {
+        font-size: 2rem; /* Smaller name on small screens */
+    }
+}
