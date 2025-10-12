@@ -9,17 +9,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-
-    <nav class="main-nav" id="home">
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#research">Research</a></li>
-            <li><a href="#teaching">Teaching</a></li>
-        </ul>
-    </nav>
 
     <header class="main-header">
         <div class="header-content">
@@ -27,40 +21,67 @@
         </div>
     </header>
 
-    <main class="container">
-        <section class="content-section" id="about">
-            <div class="about-flex">
-                <div class="about-image">
-                    <img src="headshot.jpg" alt="Brian Amorim Cabaço">
-                </div>
-                <div class="about-text">
-                    <p>
-                        I am a PhD Candidate in Economics at University College London (UCL). My research interests are in Econometrics, Applied Microeconomics, and Policy Evaluation.
-                    </p>
-                    <p>
-                        This is a great place for another paragraph. You can talk about your supervisors, affiliations, or the general theme of your research. Keep it concise and professional.
-                    </p>
-                </div>
-            </div>
-        </section>
-        
-        <section class="content-section contact-section">
-            <h2>Contact</h2>
-            <div class="contact-info">
-                <p><strong>UCL email:</strong> brian.cabaco.21 [at] ucl.ac.uk</p>
-                <p><strong>Twitter:</strong> <a href="#">@YourTwitterHandle</a></p>
-            </div>
-            <div class="contact-buttons">
-                <a href="cv_academic.pdf" class="icon-button">Academic CV</a>
-                <a href="cv_professional.pdf" class="icon-button">Professional CV</a>
-                <a href="#" class="icon-button">LinkedIn</a>
-            </div>
-        </section>
+    <nav class="sub-nav">
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#research">Research</a></li>
+            <li><a href="#teaching">Teaching</a></li>
+        </ul>
+    </nav>
 
-        <section class="content-section" id="research">
-            <h2>Working Papers</h2>
-            <div class="paper">
-                <h3><a href="#">The Title of Your First Working Paper</a></h3>
-                <p>This is where the abstract or a short description of the paper goes. Keep it to one paragraph.</p>
+    <div class="page-container">
+        
+        <aside class="sidebar">
+            <img src="headshot.jpg" alt="Brian Amorim Cabaço" class="sidebar-image">
+            <div class="sidebar-buttons">
+                <a href="cv_academic.pdf" class="icon-button">Aca. CV</a>
+                <a href="cv_professional.pdf" class="icon-button">Pro. CV</a>
+                <a href="#" class="icon-button" aria-label="LinkedIn Profile">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </a>
             </div>
-             <div class="
+        </aside>
+
+        <main class="main-content">
+            <section id="about">
+                <h2>About</h2>
+                <p>
+                    I am a PhD Candidate in Economics at University College London (UCL). My research interests are in Econometrics, Applied Microeconomics, and Policy Evaluation.
+                </p>
+                <p>
+                    This is a great place for another paragraph. You can talk about your supervisors, affiliations, or the general theme of your research. Keep it concise and professional.
+                </p>
+            </section>
+
+            <section id="research">
+                <h2>Research</h2>
+                
+                <h3>Working Papers</h3>
+                <div class="paper">
+                    <h4><a href="#">The Title of Your First Working Paper</a></h4>
+                    <p>This is where the abstract or a short description of the paper goes. Keep it to one paragraph.</p>
+                </div>
+                <div class="paper">
+                    <h4><a href="#">The Title of Your Second Working Paper</a></h4>
+                    <p>This is where the abstract or a short description of the paper goes. Keep it to one paragraph.</p>
+                </div>
+
+                <h3 class="work-in-progress">Work in Progress</h3>
+                 <div class="paper">
+                    <h4>Project Title in Progress</h4>
+                    <p>A brief description of a project you are currently working on.</p>
+                </div>
+            </section>
+
+            <section id="teaching">
+                <h2>Teaching</h2>
+                <ul>
+                    <li>GTA — ECON0001: Example Course (Spring 2025)</li>
+                    <li>Add other teaching experience here.</li>
+                </ul>
+            </section>
+        </main>
+    </div>
+
+</body>
+</html>
