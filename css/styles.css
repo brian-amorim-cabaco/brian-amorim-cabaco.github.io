@@ -81,8 +81,7 @@ body {
     background-color: #333; /* Fallback color */
     
     /* --- IMPORTANT --- */
-    /* Replace this URL with a link to your own background image! */
-    background-image: url('https://lh3.googleusercontent.com/sitesv/AICyYdae_RnW8VrBDYHJ5GnlXKdHZEvZok2wlq6Xvageo91xlT05jTTv1cjERT_eEnD1lkcu3WkSo4MflxoR377Kg7f9dVUx2lAPYPUeKHSm3fzxVr9WGBKKPCjfbfcJlhU9nYSb391k1r4YeQoVhkhfI-2chPBOMNa2pKGJIuSdiHI_jIUAFg=w16383');
+    background-image: url('../header-background.jpg');
     
     background-size: cover;
     background-position: center;
