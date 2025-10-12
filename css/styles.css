@@ -199,4 +199,7 @@ p {
     .main-content {
         padding: 1.5rem;
     }
+/* Justify paragraph text in the main content area */
+.main-content p {
+    text-align: justify;
 }
