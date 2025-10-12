@@ -152,7 +152,8 @@ p.lead {
 }
 
 section.resume-section {
-  padding-top: 5rem !important;
+  display: flex; /* This is new! */
+  align-items: center; /* This is new! */
   padding-bottom: 5rem !important;
   max-width: 75rem;
 }
