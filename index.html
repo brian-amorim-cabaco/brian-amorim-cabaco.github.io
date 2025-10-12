@@ -5,95 +5,254 @@
   <title>Brian Amorim Cabaço — PhD Candidate</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Brian Amorim Cabaço — PhD Candidate in Economics, Department of Economics, University College London." />
+
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --bg:#ffffff;
-      --fg:#222222;
-      --muted:#555555;
-      --line:#e5e5e5;
-      --link:#0b57d0;
-      --accent:#800020;      /* burgundy */
-      --card:#800020;        /* sidebar background */
-      --max:1200px;
-      --sidebar:340px;       /* wider to fit big circle */
-    }
-   /* push main content to the right of the fixed sidebar */
-.wrap { margin-left: var(--sidebar); }
 
-    *{box-sizing:border-box}
-    html,body{margin:0;height:100%}
-    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--fg);background:var(--bg);line-height:1.65}
-    a{color:var(--link);text-decoration:none}
-    a:hover{text-decoration:underline}
-    .wrap{ max-width:var(--max); margin:0 auto; padding:28px 28px }
-    .grid{display:grid;grid-template-columns:1fr;gap:28px}
-    @media (min-width:1000px){.grid{grid-template-columns:var(--sidebar) 1fr}}
+  <style>
+    /* CSS Custom Properties (Variables) */
+    :root {
+      --bg: #ffffff;
+      --fg: #222222;
+      --muted: #555555;
+      --line: #e5e5e5;
+      --link: #0b57d0;
+      --accent: #800020;    /* Your burgundy accent color */
+      --card: #f8f9fa;      /* Light grey background for sidebar/cards, like the precedent */
+      --max: 1200px;
+      --sidebar: 280px;     /* Sidebar width, matching the precedent */
+    }
+
+    /* Base Styles */
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      height: 100%;
+    }
+
+    body {
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--fg);
+      background: var(--bg);
+      line-height: 1.65;
+    }
+
+    a {
+      color: var(--link);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Layout: Main wrapper and Grid */
+    .wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 28px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr; /* Single column on mobile */
+      gap: 28px;
+    }
+
+    /* Use a two-column grid on larger screens */
+    @media (min-width: 1000px) {
+      .grid {
+        grid-template-columns: var(--sidebar) 1fr;
+      }
+    }
 
     /* Sidebar */
-    .card{
-  position: fixed;            /* stick to the left like a true sidebar */
-  top: 0;
-  left: 0;
-  width: var(--sidebar);      /* uses the same variable */
-  height: 100vh;              /* full viewport height */
-  background: var(--card);    /* burgundy */
-  color: #fff;
-  padding: 28px 22px;         /* comfortable padding */
-  border: none;               /* no border */
-  border-radius: 0;           /* remove rounded corners */
-}
+    .card {
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--card);
+      align-self: start;
+      position: sticky; /* This is the key! Makes the sidebar 'stick' on scroll */
+      top: 28px;
+    }
 
-    .head{display:flex;flex-direction:column;align-items:center;gap:14px;margin-bottom:16px}
-    .head img{
-      width:180px;height:180px;border-radius:999px;object-fit:cover;
-      border:4px solid #fff;box-shadow:0 4px 18px rgba(0,0,0,0.25)
+    .head {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 16px;
     }
-    nav{display:flex;flex-direction:column;gap:10px;margin-top:6px}
-    nav a{font-size:14px;color:#ffe3ea}
-    nav a:hover{text-decoration:underline}
-    .links{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;justify-content:center}
-    .pill{
-      font-size:13px;padding:6px 10px;border:1px solid rgba(255,255,255,0.35);
-      border-radius:999px;background:rgba(255,255,255,0.1);color:#fff;white-space:nowrap
-    }
-    .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;justify-content:center}
-    .chip{
-      font-size:12px;padding:4px 10px;border:1px solid rgba(255,255,255,0.35);
-      border-radius:999px;background:rgba(255,255,255,0.08);color:#fff
-    }
-    .top-return{font-size:13px;color:#ffe3ea;margin-top:10px;text-align:center}
 
-    /* Main content */
-    main{padding:0}
-    .hero{padding:10px 0 14px;border-bottom:1px solid var(--line)}
-    .hero h1{
-      font-weight:800;font-size:54px;line-height:1.05;margin:0 0 6px 0;letter-spacing:.5px
+    .head img {
+      width: 180px;
+      height: 180px;
+      border-radius: 999px;
+      object-fit: cover;
+      border: 4px solid #fff;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.15);
     }
-    @media (max-width:620px){ .hero h1{font-size:40px} }
-    .hero .surname{color:var(--accent)}
-    .hero .subtitle{color:#6b6b6b;font-size:14px}
-    .hero .subtitle a{color:#6b6b6b}
-    section{padding:22px 0;border-bottom:1px solid var(--line)}
-    section:last-child{border-bottom:none}
-    h2{font-size:18px;margin:0 0 12px 0;color:var(--accent)}
-    .small{font-size:14px;color:var(--muted)}
-    ul{margin:8px 0;padding-left:18px}
-    .pub{margin:12px 0;padding:12px;border:1px solid var(--line);border-radius:12px;background:#fff}
-    .row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
-    .meta{font-size:14px;color:var(--muted)}
-    .news li{margin:6px 0}
-    .content{max-width:800px}
+
+    /* Sidebar navigation links */
+    nav {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 6px;
+    }
+
+    nav a {
+      font-size: 14px;
+      color: var(--muted); /* Changed for light background */
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+      justify-content: center;
+    }
+
+    /* Sidebar pills (CV, LinkedIn, etc.) */
+    .pill {
+      font-size: 13px;
+      padding: 6px 10px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      background: rgba(0,0,0,0.05);
+      color: var(--fg);
+      white-space: nowrap;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+      justify-content: center;
+    }
+
+    .chip {
+      font-size: 12px;
+      padding: 4px 10px;
+      border: 1px solid rgba(0,0,0,0.1);
+      border-radius: 999px;
+      background: rgba(0,0,0,0.03);
+      color: var(--muted);
+    }
+
+    .top-return {
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    /* Main Content Area */
+    main {
+      padding: 0;
+    }
+
+    .hero {
+      padding: 10px 0 14px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hero h1 {
+      font-weight: 800;
+      font-size: 48px; /* Adjusted to match precedent */
+      line-height: 1.05;
+      margin: 0 0 6px 0;
+    }
+
+    @media (max-width: 620px) {
+      .hero h1 {
+        font-size: 40px;
+      }
+    }
+
+    .hero .surname {
+      color: var(--accent); /* Uses your burgundy color */
+    }
+
+    .hero .subtitle {
+      color: #6b6b6b;
+      font-size: 14px;
+    }
+
+    .hero .subtitle a {
+      color: #6b6b6b;
+    }
+
+    section {
+      padding: 22px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    section:last-child {
+      border-bottom: none;
+    }
+
+    h2 {
+      font-size: 18px;
+      margin: 0 0 12px 0;
+      color: var(--accent);
+    }
+
+    .small {
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    ul {
+      margin: 8px 0;
+      padding-left: 18px;
+    }
+
+    /* Publication/Project Cards */
+    .pub {
+      margin: 12px 0;
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--card); /* Uses the same light grey as the sidebar */
+    }
+
+    .pub .pill {
+        background: rgba(0,0,0,0.05);
+        color: var(--fg);
+        border: 1px solid transparent;
+    }
+
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .meta {
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .news li {
+      margin: 6px 0;
+    }
   </style>
 </head>
 <body>
+
   <div class="wrap">
     <div class="grid">
-      <!-- LEFT SIDEBAR -->
+
       <aside class="card">
         <div class="head">
-          <!-- Ensure this file exists in repo; use .jpg or .jpeg but match the name exactly -->
           <img src="headshot.jpg" alt="Brian Amorim Cabaço">
         </div>
 
@@ -122,14 +281,12 @@
         <div class="top-return"><a href="#top">Back to top</a></div>
       </aside>
 
-      <!-- RIGHT CONTENT -->
-      <main id="top" class="content">
-        <!-- HERO with big name and subtitle (like the precedent) -->
+      <main id="top">
         <div class="hero">
           <h1><span class="firstname">BRIAN</span> <span class="surname">AMORIM CABAÇO</span></h1>
           <div class="subtitle">
-            PhD Candidate in Economics — 
-            <a href="https://www.ucl.ac.uk/social-historical-sciences/economics">Department of Economics</a>, 
+            PhD Candidate in Economics —
+            <a href="https://www.ucl.ac.uk/social-historical-sciences/economics">Department of Economics</a>,
             <a href="https://www.ucl.ac.uk/">University College London</a> · London, UK
           </div>
         </div>
@@ -211,8 +368,10 @@
           <p class="small">© <span id="y"></span> Brian Amorim Cabaço</p>
         </section>
       </main>
+
     </div>
   </div>
+
   <script>document.getElementById('y').textContent = new Date().getFullYear()</script>
 </body>
 </html>
