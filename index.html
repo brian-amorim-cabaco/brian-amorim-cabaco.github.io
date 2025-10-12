@@ -1,377 +1,97 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <title>Brian Amorim Cabaço — PhD Candidate</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Brian Amorim Cabaço — PhD Candidate in Economics, Department of Economics, University College London." />
-
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-
-  <style>
-    /* CSS Custom Properties (Variables) */
-    :root {
-      --bg: #ffffff;
-      --fg: #222222;
-      --muted: #555555;
-      --line: #e5e5e5;
-      --link: #0b57d0;
-      --accent: #800020;    /* Your burgundy accent color */
-      --card: #f8f9fa;      /* Light grey background for sidebar/cards, like the precedent */
-      --max: 1200px;
-      --sidebar: 280px;     /* Sidebar width, matching the precedent */
-    }
-
-    /* Base Styles */
-    * {
-      box-sizing: border-box;
-    }
-
-    html, body {
-      margin: 0;
-      height: 100%;
-    }
-
-    body {
-      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      color: var(--fg);
-      background: var(--bg);
-      line-height: 1.65;
-    }
-
-    a {
-      color: var(--link);
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    /* Layout: Main wrapper and Grid */
-    .wrap {
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 28px;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: 1fr; /* Single column on mobile */
-      gap: 28px;
-    }
-
-    /* Use a two-column grid on larger screens */
-    @media (min-width: 1000px) {
-      .grid {
-        grid-template-columns: var(--sidebar) 1fr;
-      }
-    }
-
-    /* Sidebar */
-    .card {
-      padding: 22px;
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      background: var(--card);
-      align-self: start;
-      position: sticky; /* This is the key! Makes the sidebar 'stick' on scroll */
-      top: 28px;
-    }
-
-    .head {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 14px;
-      margin-bottom: 16px;
-    }
-
-    .head img {
-      width: 180px;
-      height: 180px;
-      border-radius: 999px;
-      object-fit: cover;
-      border: 4px solid #fff;
-      box-shadow: 0 4px 18px rgba(0,0,0,0.15);
-    }
-
-    /* Sidebar navigation links */
-    nav {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin-top: 6px;
-    }
-
-    nav a {
-      font-size: 14px;
-      color: var(--muted); /* Changed for light background */
-    }
-
-    .links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 16px;
-      justify-content: center;
-    }
-
-    /* Sidebar pills (CV, LinkedIn, etc.) */
-    .pill {
-      font-size: 13px;
-      padding: 6px 10px;
-      border: 1px solid transparent;
-      border-radius: 999px;
-      background: rgba(0,0,0,0.05);
-      color: var(--fg);
-      white-space: nowrap;
-    }
-
-    .chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 14px;
-      justify-content: center;
-    }
-
-    .chip {
-      font-size: 12px;
-      padding: 4px 10px;
-      border: 1px solid rgba(0,0,0,0.1);
-      border-radius: 999px;
-      background: rgba(0,0,0,0.03);
-      color: var(--muted);
-    }
-
-    .top-return {
-      font-size: 13px;
-      color: var(--muted);
-      margin-top: 10px;
-      text-align: center;
-    }
-
-    /* Main Content Area */
-    main {
-      padding: 0;
-    }
-
-    .hero {
-      padding: 10px 0 14px;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .hero h1 {
-      font-weight: 800;
-      font-size: 48px; /* Adjusted to match precedent */
-      line-height: 1.05;
-      margin: 0 0 6px 0;
-    }
-
-    @media (max-width: 620px) {
-      .hero h1 {
-        font-size: 40px;
-      }
-    }
-
-    .hero .surname {
-      color: var(--accent); /* Uses your burgundy color */
-    }
-
-    .hero .subtitle {
-      color: #6b6b6b;
-      font-size: 14px;
-    }
-
-    .hero .subtitle a {
-      color: #6b6b6b;
-    }
-
-    section {
-      padding: 22px 0;
-      border-bottom: 1px solid var(--line);
-    }
-
-    section:last-child {
-      border-bottom: none;
-    }
-
-    h2 {
-      font-size: 18px;
-      margin: 0 0 12px 0;
-      color: var(--accent);
-    }
-
-    .small {
-      font-size: 14px;
-      color: var(--muted);
-    }
-
-    ul {
-      margin: 8px 0;
-      padding-left: 18px;
-    }
-
-    /* Publication/Project Cards */
-    .pub {
-      margin: 12px 0;
-      padding: 12px;
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      background: var(--card); /* Uses the same light grey as the sidebar */
-    }
-
-    .pub .pill {
-        background: rgba(0,0,0,0.05);
-        color: var(--fg);
-        border: 1px solid transparent;
-    }
-
-    .row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      align-items: center;
-    }
-
-    .meta {
-      font-size: 14px;
-      color: var(--muted);
-    }
-
-    .news li {
-      margin: 6px 0;
-    }
-  </style>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="Brian Amorim Cabaço — PhD Candidate in Economics, Department of Economics, University College London." />
+    <meta name="author" content="Brian Amorim Cabaço" />
+    <title>Brian Amorim Cabaço</title>
+    
+    <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
+    
+    <link href="css/styles.css" rel="stylesheet" />
 </head>
-<body>
 
-  <div class="wrap">
-    <div class="grid">
+<body id="page-top">
 
-      <aside class="card">
-        <div class="head">
-          <img src="headshot.jpg" alt="Brian Amorim Cabaço">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">
+            <span class="d-block d-lg-none">Brian Amorim Cabaço</span>
+            <span class="d-none d-lg-block">
+                <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="headshot.jpg" alt="Headshot of Brian Amorim Cabaço" />
+            </span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#research">Research</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#teaching">Teaching</a></li>
+            </ul>
         </div>
+    </nav>
 
-        <nav>
-          <a href="#about">About</a>
-          <a href="#publications">Publications</a>
-          <a href="#projects">Projects</a>
-          <a href="#teaching">Teaching</a>
-          <a href="#talks">Talks</a>
-          <a href="#service">Service</a>
-          <a href="#contact">Contact</a>
-        </nav>
-
-        <div class="links">
-          <a class="pill" href="cv.pdf">CV (PDF)</a>
-          <a class="pill" href="https://orcid.org/0000-0000-0000-0000">ORCID</a>
-          <a class="pill" href="https://www.linkedin.com/in/brian-amorim-cabaco/?originalSubdomain=uk">LinkedIn</a>
-        </div>
-
-        <div class="chips">
-          <span class="chip">Econometrics</span>
-          <span class="chip">Applied Micro</span>
-          <span class="chip">Policy</span>
-        </div>
-
-        <div class="top-return"><a href="#top">Back to top</a></div>
-      </aside>
-
-      <main id="top">
-        <div class="hero">
-          <h1><span class="firstname">BRIAN</span> <span class="surname">AMORIM CABAÇO</span></h1>
-          <div class="subtitle">
-            PhD Candidate in Economics —
-            <a href="https://www.ucl.ac.uk/social-historical-sciences/economics">Department of Economics</a>,
-            <a href="https://www.ucl.ac.uk/">University College London</a> · London, UK
-          </div>
-        </div>
-
-        <section id="about">
-          <h2>About</h2>
-          <p>
-            Replace this with a concise bio (3–5 sentences): research focus, supervisor(s), lab/group,
-            and one line on your current project. Keep it factual.
-          </p>
-          <ul class="news small">
-            <li><strong>2025-09-10:</strong> Paper accepted at Conference (Spotlight).</li>
-            <li><strong>2025-06-02:</strong> Started internship at Company.</li>
-          </ul>
-        </section>
-
-        <section id="publications">
-          <h2>Publications (selected)</h2>
-          <div class="pub">
-            <div class="row">
-              <strong>Paper Title</strong>
-              <span class="meta">— Journal/Conference, 2025</span>
+    <div class="container-fluid p-0">
+        <section class="resume-section" id="about">
+            <div class="resume-section-content">
+                <h1 class="mb-0">
+                    Brian
+                    <span class="text-primary">Amorim Cabaço</span>
+                </h1>
+                <div class="subheading mb-5">
+                    University College London · 
+                    <a href="mailto:brian.cabaco.17@ucl.ac.uk">brian.cabaco.17@ucl.ac.uk</a>
+                </div>
+                <p class="lead mb-5">
+                    I am a PhD Candidate in Economics at University College London (UCL). Lore ipsum.
+                    <br /><br />
+                    You can add another sentence or two here about your work, supervisors, or affiliations.
+                </p>
+                <div class="social-icons">
+                    <a class="social-icon" href="cv.pdf">CV</a>
+                    <a class="social-icon" href="https://www.linkedin.com/in/brian-amorim-cabaco/?originalSubdomain=uk">LinkedIn</a>
+                </div>
             </div>
-            <div class="meta">Author A, <strong>Brian Amorim Cabaço</strong>, Author C</div>
-            <div class="row" style="margin-top:6px">
-              <a class="pill" href="#">PDF</a>
-              <a class="pill" href="#">Code</a>
-              <a class="pill" href="#" title="@article{...}">BibTeX</a>
+        </section>
+        <hr class="m-0" />
+
+        <section class="resume-section" id="research">
+            <div class="resume-section-content">
+                <h2 class="mb-5">Working Papers</h2>
+                
+                <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                    <div class="flex-grow-1">
+                        <h3 class="mb-0">Title of Your First Working Paper</h3>
+                        <div class="subheading mb-3">Optional: with Co-Author Name</div>
+                        <p>This is where the abstract or a short description of the paper goes. Keep it to one paragraph. You can link to the full paper by wrapping the title in an `<a>` tag like this: `<a href="paper1.pdf">Paper Title</a>`.</p>
+                    </div>
+                </div>
+
+                <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                    <div class="flex-grow-1">
+                        <h3 class="mb-0">Title of Your Second Working Paper</h3>
+                        <p>This is where the abstract or a short description of the paper goes. Keep it to one paragraph.</p>
+                    </div>
+                </div>
+
             </div>
-          </div>
         </section>
+        <hr class="m-0" />
 
-        <section id="projects">
-          <h2>Projects / Research highlights</h2>
-          <div class="pub">
-            <div class="row">
-              <strong>Project/Highlight Title</strong>
-              <span class="meta">— one-line contribution (problem → method → result)</span>
+        <section class="resume-section" id="teaching">
+            <div class="resume-section-content">
+                <h2 class="mb-5">Teaching</h2>
+                <ul>
+                    <li>GTA — ECON0001: Example Course (Spring 2025)</li>
+                    <li>Add other teaching experience here.</li>
+                </ul>
             </div>
-            <div class="row" style="margin-top:6px">
-              <a class="pill" href="#">Paper</a>
-              <a class="pill" href="#">Code</a>
-              <a class="pill" href="#">Poster</a>
-              <a class="pill" href="#">Video</a>
-            </div>
-          </div>
         </section>
-
-        <section id="teaching">
-          <h2>Teaching</h2>
-          <ul>
-            <li>GTA — ECON0001: Example Course (Spring 2025). <a href="#">Materials</a></li>
-          </ul>
-        </section>
-
-        <section id="talks">
-          <h2>Talks</h2>
-          <ul>
-            <li>Invited: Topic — Venue (2025-10-05). <a href="#">Details</a></li>
-          </ul>
-        </section>
-
-        <section id="service">
-          <h2>Service</h2>
-          <ul>
-            <li>Reviewer — Journal/Conference</li>
-          </ul>
-        </section>
-
-        <section id="contact">
-          <h2>Contact</h2>
-          <p class="small">
-            email: firstname.lastname [at] ucl.ac.uk<br/>
-            Office: Building, Room, UCL, London
-          </p>
-        </section>
-
-        <section>
-          <p class="small">© <span id="y"></span> Brian Amorim Cabaço</p>
-        </section>
-      </main>
+        <hr class="m-0" />
 
     </div>
-  </div>
-
-  <script>document.getElementById('y').textContent = new Date().getFullYear()</script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/scripts.js"></script>
 </body>
 </html>
