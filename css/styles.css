@@ -12,7 +12,7 @@ body {
     margin: 0;
     font-family: var(--font-family);
     color: var(--dark-text);
-    background-color: #fff;
+    background-color: var(--light-grey); /* Changed from #fff to var(--light-grey) */
 }
 
 * {
@@ -62,17 +62,35 @@ body {
     margin: 0;
 }
 
+.main-nav li {
+    margin-bottom: 0.5rem; /* Space between buttons */
+}
+
 .main-nav li a {
     display: block;
-    padding: 0.75rem 0;
-    color: var(--medium-text);
+    padding: 0.75rem 1rem; /* More padding for button look */
+    background-color: #e0e0e0; /* Light grey background for button */
+    color: var(--dark-text);
     text-decoration: none;
-    font-size: 1.1rem;
+    font-size: 1rem; /* Slightly smaller font for buttons */
     font-weight: 400;
+    border-radius: 4px; /* Slightly rounded corners for buttons */
+    transition: background-color 0.2s ease, color 0.2s ease; /* Smooth hover effect */
 }
 
 .main-nav li a:hover {
-    color: var(--primary-blue);
+    background-color: var(--primary-blue); /* Blue on hover */
+    color: #fff; /* White text on hover */
+}
+
+/* Highlight current page (optional - advanced) */
+/* If you want the current page button to be highlighted,
+   you would add a class like 'active' to the <li> in HTML
+   Example: <li class="active"><a href="#home">Home</a></li> */
+.main-nav li.active a {
+    background-color: var(--primary-blue);
+    color: #fff;
+    font-weight: 700;
 }
 
 /* --- Main Content Header --- */
@@ -190,4 +208,13 @@ h2 {
         align-items: center;
         text-align: center;
     }
+}
+
+
+.sidebar-headshot img {
+    width: 120px;       /* This sets the new, smaller width */
+    height: 120px;      /* This sets the new, smaller height */
+    border-radius: 0;   /* This keeps it a square */
+    object-fit: cover;
+    border: 1px solid #e0e0e0; /* This adds the light grey border */
 }
