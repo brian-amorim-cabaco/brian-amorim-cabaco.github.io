@@ -19,20 +19,34 @@
       --max:1200px;
       --sidebar:340px;       /* wider to fit big circle */
     }
+    /* push main content to the right of the fixed sidebar */
+main, .hero, .content, .wrap {
+  margin-left: var(--sidebar);
+}
+
     *{box-sizing:border-box}
     html,body{margin:0;height:100%}
     body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--fg);background:var(--bg);line-height:1.65}
     a{color:var(--link);text-decoration:none}
     a:hover{text-decoration:underline}
-    .wrap{max-width:var(--max);margin:0 auto;padding:28px}
+    .wrap{ max-width:var(--max); margin:0 auto; padding:28px 28px }
     .grid{display:grid;grid-template-columns:1fr;gap:28px}
     @media (min-width:1000px){.grid{grid-template-columns:var(--sidebar) 1fr}}
 
     /* Sidebar */
     .card{
-      position:sticky;top:20px;align-self:start;border:1px solid var(--line);
-      border-radius:16px;padding:22px;background:var(--card);color:#fff;
-    }
+  position: fixed;            /* stick to the left like a true sidebar */
+  top: 0;
+  left: 0;
+  width: var(--sidebar);      /* uses the same variable */
+  height: 100vh;              /* full viewport height */
+  background: var(--card);    /* burgundy */
+  color: #fff;
+  padding: 28px 22px;         /* comfortable padding */
+  border: none;               /* no border */
+  border-radius: 0;           /* remove rounded corners */
+}
+
     .head{display:flex;flex-direction:column;align-items:center;gap:14px;margin-bottom:16px}
     .head img{
       width:180px;height:180px;border-radius:999px;object-fit:cover;
