@@ -181,3 +181,7 @@ a {
 a:hover, a:focus, a:active {
     color: #6d0016; /* A darker version of your burgundy */
 }
+/* This new rule makes the navigation links white */
+#sideNav .navbar-nav .nav-item .nav-link {
+    color: #fff; 
+}
