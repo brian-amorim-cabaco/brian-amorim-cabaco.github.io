@@ -6,79 +6,73 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Brian Amorim Cabaço — PhD Candidate in Economics, Department of Economics, University College London." />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
     :root{
-      --bg:#ffffff;      /* page background */
-      --fg:#222222;      /* main text */
-      --muted:#555555;   /* subtext */
-      --line:#e0e0e0;    /* borders */
-      --link:#0b57d0;    /* global link colour */
-      --card:#800020;    /* SIDEBAR background: burgundy */
-      --max:1080px;
-      --sidebar:320px;
+      --bg:#ffffff;
+      --fg:#222222;
+      --muted:#555555;
+      --line:#e5e5e5;
+      --link:#0b57d0;
+      --accent:#800020;      /* burgundy */
+      --card:#800020;        /* sidebar background */
+      --max:1200px;
+      --sidebar:340px;       /* wider to fit big circle */
     }
     *{box-sizing:border-box}
     html,body{margin:0;height:100%}
-    body{
-      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-      color:var(--fg); background:var(--bg); line-height:1.65;
-    }
-    a{color:var(--link); text-decoration:none}
+    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--fg);background:var(--bg);line-height:1.65}
+    a{color:var(--link);text-decoration:none}
     a:hover{text-decoration:underline}
-    .wrap{max-width:var(--max); margin:0 auto; padding:28px}
-    .grid{display:grid; grid-template-columns: 1fr; gap:28px}
-    @media (min-width:980px){ .grid{grid-template-columns: var(--sidebar) 1fr} }
+    .wrap{max-width:var(--max);margin:0 auto;padding:28px}
+    .grid{display:grid;grid-template-columns:1fr;gap:28px}
+    @media (min-width:1000px){.grid{grid-template-columns:var(--sidebar) 1fr}}
 
     /* Sidebar */
     .card{
-      position:sticky; top:20px; align-self:start; border:1px solid var(--line);
-      border-radius:16px; padding:22px; background:var(--card);
-      color:#ffffff; /* sidebar text */
+      position:sticky;top:20px;align-self:start;border:1px solid var(--line);
+      border-radius:16px;padding:22px;background:var(--card);color:#fff;
     }
-    /* Sidebar header: photo above name, centered */
-.head{
-  display:flex;
-  flex-direction:column;       /* put image on top, text below */
-  gap:12px;
-  align-items:center;
-  margin-bottom:14px;
-}
-
-/* Bigger, circular headshot inside the burgundy card */
-.head img{
-  width:140px;                 /* try 140–180 if you want even bigger */
-  height:140px;
-  border-radius:999px;         /* perfect circle */
-  object-fit:cover;            /* crops to fill circle nicely */
-  border:2px solid rgba(255,255,255,0.5);
-  box-shadow: 0 2px 10px rgba(0,0,0,0.15);
-}
-
-    .links{display:flex; flex-wrap:wrap; gap:8px; margin-top:12px}
+    .head{display:flex;flex-direction:column;align-items:center;gap:14px;margin-bottom:16px}
+    .head img{
+      width:180px;height:180px;border-radius:999px;object-fit:cover;
+      border:4px solid #fff;box-shadow:0 4px 18px rgba(0,0,0,0.25)
+    }
+    nav{display:flex;flex-direction:column;gap:10px;margin-top:6px}
+    nav a{font-size:14px;color:#ffe3ea}
+    nav a:hover{text-decoration:underline}
+    .links{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;justify-content:center}
     .pill{
-      font-size:13px; padding:6px 10px; border:1px solid rgba(255,255,255,0.35);
-      border-radius:999px; background:rgba(255,255,255,0.1); color:#fff; white-space:nowrap;
+      font-size:13px;padding:6px 10px;border:1px solid rgba(255,255,255,0.35);
+      border-radius:999px;background:rgba(255,255,255,0.1);color:#fff;white-space:nowrap
     }
-    aside.card nav a{ color:#ffe3ea; }
-    aside.card nav a:hover{ text-decoration:underline; }
+    .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;justify-content:center}
+    .chip{
+      font-size:12px;padding:4px 10px;border:1px solid rgba(255,255,255,0.35);
+      border-radius:999px;background:rgba(255,255,255,0.08);color:#fff
+    }
+    .top-return{font-size:13px;color:#ffe3ea;margin-top:10px;text-align:center}
 
     /* Main content */
     main{padding:0}
-    section{padding:22px 0; border-bottom:1px solid var(--line)}
+    .hero{padding:10px 0 14px;border-bottom:1px solid var(--line)}
+    .hero h1{
+      font-weight:800;font-size:54px;line-height:1.05;margin:0 0 6px 0;letter-spacing:.5px
+    }
+    @media (max-width:620px){ .hero h1{font-size:40px} }
+    .hero .surname{color:var(--accent)}
+    .hero .subtitle{color:#6b6b6b;font-size:14px}
+    .hero .subtitle a{color:#6b6b6b}
+    section{padding:22px 0;border-bottom:1px solid var(--line)}
     section:last-child{border-bottom:none}
-    h2{font-size:18px; margin:0 0 12px 0; color:#800020} /* section titles burgundy */
-    .small{font-size:14px; color:var(--muted)}
-    ul{margin:8px 0; padding-left:18px}
-    .pub{margin:12px 0; padding:12px; border:1px solid var(--line); border-radius:12px}
-    .row{display:flex; flex-wrap:wrap; gap:8px; align-items:center}
-    .meta{font-size:14px; color:var(--muted)}
+    h2{font-size:18px;margin:0 0 12px 0;color:var(--accent)}
+    .small{font-size:14px;color:var(--muted)}
+    ul{margin:8px 0;padding-left:18px}
+    .pub{margin:12px 0;padding:12px;border:1px solid var(--line);border-radius:12px;background:#fff}
+    .row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+    .meta{font-size:14px;color:var(--muted)}
     .news li{margin:6px 0}
-    nav{display:flex; flex-wrap:wrap; gap:12px; margin-top:10px}
-    nav a{font-size:13px}
-    .top-return{font-size:13px; color:var(--muted); margin-top:10px}
-    .content{max-width:760px} /* reading width */
+    .content{max-width:800px}
   </style>
 </head>
 <body>
@@ -87,17 +81,8 @@
       <!-- LEFT SIDEBAR -->
       <aside class="card">
         <div class="head">
-          <!-- Upload headshot.jpg to repo to enable -->
-          <img src="headshot.jpg" alt="Brian Amorim Cabaço">
-          <div>
-            <h1>Brian Amorim Cabaço</h1>
-            <div class="tagline">
-              PhD Candidate in Economics, 
-              <a href="https://www.ucl.ac.uk/social-historical-sciences/economics">Department of Economics</a>, 
-              <a href="https://www.ucl.ac.uk/">University College London</a><br/>
-              Based in London, UK
-            </div>
-          </div>
+          <!-- Ensure this file exists in repo; use .jpg or .jpeg but match the name exactly -->
+          <img src="headshot.jpeg" alt="Brian Amorim Cabaço">
         </div>
 
         <nav>
@@ -112,10 +97,8 @@
 
         <div class="links">
           <a class="pill" href="cv.pdf">CV (PDF)</a>
-          <a class="pill" href="https://scholar.google.com/citations?user=XXXX">Google Scholar</a>
           <a class="pill" href="https://orcid.org/0000-0000-0000-0000">ORCID</a>
-          <a class="pill" href="https://github.com/USERNAME">GitHub</a>
-          <a class="pill" href="https://www.linkedin.com/in/USERNAME/">LinkedIn</a>
+          <a class="pill" href="https://www.linkedin.com/in/brian-amorim-cabaco/?originalSubdomain=uk">LinkedIn</a>
         </div>
 
         <div class="chips">
@@ -129,11 +112,21 @@
 
       <!-- RIGHT CONTENT -->
       <main id="top" class="content">
+        <!-- HERO with big name and subtitle (like the precedent) -->
+        <div class="hero">
+          <h1><span class="firstname">BRIAN</span> <span class="surname">AMORIM CABAÇO</span></h1>
+          <div class="subtitle">
+            PhD Candidate in Economics — 
+            <a href="https://www.ucl.ac.uk/social-historical-sciences/economics">Department of Economics</a>, 
+            <a href="https://www.ucl.ac.uk/">University College London</a> · London, UK
+          </div>
+        </div>
+
         <section id="about">
           <h2>About</h2>
           <p>
             Replace this with a concise bio (3–5 sentences): research focus, supervisor(s), lab/group,
-            one-line on your current project. Keep it factual.
+            and one line on your current project. Keep it factual.
           </p>
           <ul class="news small">
             <li><strong>2025-09-10:</strong> Paper accepted at Conference (Spotlight).</li>
@@ -143,7 +136,6 @@
 
         <section id="publications">
           <h2>Publications (selected)</h2>
-
           <div class="pub">
             <div class="row">
               <strong>Paper Title</strong>
@@ -156,7 +148,6 @@
               <a class="pill" href="#" title="@article{...}">BibTeX</a>
             </div>
           </div>
-
         </section>
 
         <section id="projects">
@@ -210,7 +201,6 @@
       </main>
     </div>
   </div>
-
   <script>document.getElementById('y').textContent = new Date().getFullYear()</script>
 </body>
 </html>
