@@ -6,115 +6,84 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Your Name — PhD Candidate in FIELD at UNIVERSITY." />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Source+Serif+Pro:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    :root { --fg:#0a0a0a; --muted:#555; --link:#0b57d0; --bg:#fff; }
-    *{box-sizing:border-box} body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--fg);background:var(--bg);line-height:1.6}
-    a{color:var(--link);text-decoration:none} a:hover{text-decoration:underline}
-    .wrap{max-width:820px;margin:0 auto;padding:28px}
-    header{display:flex;gap:18px;align-items:center;margin-bottom:18px}
-    img.headshot{width:92px;height:92px;border-radius:16px;object-fit:cover;border:1px solid #e5e5e5}
-    h1{font-size:28px;line-height:1.2;margin:0}
-    .muted{color:var(--muted)}
-    .tags{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 0}
-    .tag{font-size:12px;padding:4px 8px;border:1px solid #ddd;border-radius:999px}
-    section{padding:20px 0;border-top:1px solid #eee}
-    h2{font-size:18px;margin:0 0 10px}
-    ul{padding-left:18px;margin:8px 0}
-    .pub{margin:12px 0;padding:12px;border:1px solid #eee;border-radius:12px}
-    .small{font-size:14px}
-    .row{display:flex;gap:8px;flex-wrap:wrap}
-    .pill{font-size:13px;border:1px solid #ddd;border-radius:999px;padding:4px 10px}
-    footer{padding:24px 0;color:#777;font-size:13px}
-    @media (max-width:560px){header{flex-direction:column;align-items:flex-start}}
+    :root{
+      --bg:#ffffff; --fg:#111; --muted:#666; --line:#e9e9e9; --link:#0b57d0;
+      --card:#fafafa; --max:1080px; --sidebar:320px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;height:100%}
+    body{
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      color:var(--fg); background:var(--bg); line-height:1.65;
+    }
+    a{color:var(--link); text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:var(--max); margin:0 auto; padding:28px}
+    .grid{display:grid; grid-template-columns: 1fr; gap:28px}
+    @media (min-width:980px){ .grid{grid-template-columns: var(--sidebar) 1fr} }
+
+    /* Sidebar */
+    .card{
+      position:sticky; top:20px; align-self:start; border:1px solid var(--line);
+      border-radius:16px; padding:22px; background:var(--card);
+    }
+    .head{
+      display:flex; gap:16px; align-items:center; margin-bottom:10px;
+    }
+    .head img{width:84px; height:84px; border-radius:14px; object-fit:cover; border:1px solid var(--line)}
+    h1{font-size:28px; line-height:1.2; margin:0}
+    .tagline{color:var(--muted); font-size:14px}
+    .chips{display:flex; flex-wrap:wrap; gap:8px; margin-top:10px}
+    .chip{font-size:12px; padding:4px 10px; border:1px solid var(--line); border-radius:999px; background:#fff}
+    .links{display:flex; flex-wrap:wrap; gap:8px; margin-top:12px}
+    .pill{font-size:13px; padding:6px 10px; border:1px solid var(--line); border-radius:999px; background:#fff; white-space:nowrap}
+
+    /* Main content */
+    main{padding:0}
+    section{padding:22px 0; border-bottom:1px solid var(--line)}
+    section:last-child{border-bottom:none}
+    h2{font-size:18px; margin:0 0 12px 0}
+    .small{font-size:14px; color:var(--muted)}
+    ul{margin:8px 0; padding-left:18px}
+    .pub{margin:12px 0; padding:12px; border:1px solid var(--line); border-radius:12px}
+    .row{display:flex; flex-wrap:wrap; gap:8px; align-items:center}
+    .meta{font-size:14px; color:var(--muted)}
+    .news li{margin:6px 0}
+    nav{display:flex; flex-wrap:wrap; gap:12px; margin-top:10px}
+    nav a{font-size:13px}
+    .top-return{font-size:13px; color:var(--muted); margin-top:10px}
+
+    /* Better reading width */
+    .content{max-width:760px}
   </style>
 </head>
 <body>
   <div class="wrap">
-    <header>
-      <!-- Optional headshot: put headshot.jpg in the repo and set src="headshot.jpg" -->
-      <!-- <img class="headshot" src="headshot.jpg" alt="Your Name headshot"> -->
-      <div>
-        <h1>Your Name</h1>
-        <div class="muted small">PhD Candidate in FIELD, <a href="#">Department</a>, <a href="#">University</a>. Based in City, Country.</div>
-        <div class="row small" style="margin-top:8px">
+    <div class="grid">
+      <!-- LEFT SIDEBAR -->
+      <aside class="card">
+        <div class="head">
+          <!-- Upload headshot.jpg to repo to enable -->
+          <!-- <img src="headshot.jpg" alt="Your Name"> -->
+          <div>
+            <h1>Your Name</h1>
+            <div class="tagline">PhD Candidate in FIELD, <a href="#">Department</a>, <a href="#">University</a><br/>Based in City, Country</div>
+          </div>
+        </div>
+
+        <nav>
+          <a href="#about">About</a>
+          <a href="#publications">Publications</a>
+          <a href="#projects">Projects</a>
+          <a href="#teaching">Teaching</a>
+          <a href="#talks">Talks</a>
+          <a href="#service">Service</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="links">
           <a class="pill" href="cv.pdf">CV (PDF)</a>
           <a class="pill" href="https://scholar.google.com/citations?user=XXXX">Google Scholar</a>
-          <a class="pill" href="https://orcid.org/0000-0000-0000-0000">ORCID</a>
-          <a class="pill" href="https://github.com/USERNAME">GitHub</a>
-          <a class="pill" href="https://www.linkedin.com/in/USERNAME/">LinkedIn</a>
-          <!-- Write email as text to reduce scraping -->
-          <span class="pill">email: firstname.lastname [at] university.edu</span>
-        </div>
-        <div class="tags">
-          <span class="tag">Machine Learning</span>
-          <span class="tag">Causality</span>
-          <span class="tag">Health Data</span>
-        </div>
-      </div>
-    </header>
-
-    <section>
-      <h2>News</h2>
-      <ul class="small">
-        <li><strong>2025-09-10:</strong> Paper accepted to Conference (Spotlight).</li>
-        <li><strong>2025-06-02:</strong> Started internship at Company.</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Selected Research Highlights</h2>
-      <div class="pub">
-        <div><strong>Paper Title</strong> — one-line contribution: problem → method → result.</div>
-        <div class="row small" style="margin-top:6px">
-          <a class="pill" href="#">PDF</a>
-          <a class="pill" href="#">Code</a>
-          <a class="pill" href="#">Poster</a>
-          <a class="pill" href="#">Video</a>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <h2>Publications</h2>
-      <div class="pub small">
-        <div><strong>Title of the Paper</strong> (Conference, 2025)</div>
-        <div>Author A, <strong>Your Name</strong>, Author C</div>
-        <div class="row" style="margin-top:6px">
-          <a class="pill" href="#">PDF</a>
-          <a class="pill" href="#">Code</a>
-          <a class="pill" href="#" title="@inproceedings{...}">BibTeX</a>
-        </div>
-      </div>
-      <!-- copy the block above per paper -->
-    </section>
-
-    <section>
-      <h2>Teaching</h2>
-      <ul class="small">
-        <li>GTA — COMP123: Intro to ML (Spring 2025). <a href="#">Materials</a></li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Talks</h2>
-      <ul class="small">
-        <li>Invited: Reliable ML for Health — Oxford ML Seminar (2025-10-05). <a href="#">Details</a></li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Service</h2>
-      <ul class="small">
-        <li>Reviewer — ICLR 2025</li>
-        <li>Reviewer — NeurIPS 2024</li>
-      </ul>
-    </section>
-
-    <footer>
-      © <span id="y"></span> Your Name · <a href="#">Back to top</a>
-    </footer>
-  </div>
-  <script>document.getElementById('y').textContent = new Date().getFullYear()</script>
-</body>
-</html>
+          <a class="pill" href="https://orcid.org/0000-0000-0000-
