@@ -5,7 +5,8 @@
     --border-color: #e0e0e0;
     --dark-text: #212121;
     --medium-text: #5f5f5f;
-    --font-family: 'Lato', sans-serif;
+    --font-family-body: 'Newsreader', serif; /* NEW FONT */
+    --font-family-heading: 'Roboto', sans-serif; /* NEW FONT */
 }
 
 /* --- General Styles --- */
@@ -15,7 +16,7 @@ html {
 }
 body {
     margin: 0;
-    font-family: var(--font-family);
+    font-family: var(--font-family-body); /* Use Newsreader */
     color: var(--dark-text);
     background-color: var(--light-grey-bg);
 }
@@ -45,6 +46,7 @@ body {
     color: #fff;
     font-size: 3.5rem;
     font-weight: 300;
+    font-family: var(--font-family-heading); /* Use Roboto */
 }
 
 /* --- Sticky Sub-Navigation Bar --- */
@@ -71,6 +73,7 @@ body {
     font-size: 0.9rem;
     letter-spacing: 0.5px;
     text-decoration: none;
+    font-family: var(--font-family-heading); /* Use Roboto */
 }
 .sub-nav a:hover {
     color: var(--primary-blue);
@@ -93,7 +96,7 @@ body {
 .sidebar-image {
     width: 150px;
     height: 150px;
-    border-radius: 50%;
+    border-radius: 8px; /* Changed to a rounded square */
     object-fit: cover;
     border: 4px solid #fff;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
@@ -101,28 +104,30 @@ body {
 .sidebar-buttons {
     margin-top: 1.5rem;
     display: flex;
-    justify-content: center;
-    gap: 0.75rem;
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 0.5rem; /* Space between buttons */
 }
 .icon-button {
-    width: 70px;
-    height: 70px;
+    width: 100%; /* Make buttons full width of sidebar */
+    height: auto;
     background-color: var(--primary-blue);
     color: #fff;
-    border-radius: 50%;
+    border-radius: 8px; /* Rounded square corners */
     display: flex;
     align-items: center;
     justify-content: center;
     text-decoration: none;
     font-weight: 700;
-    font-size: 0.8rem;
+    font-size: 1rem;
+    padding: 0.75rem 1rem; /* Adjust padding for new shape */
     transition: background-color 0.2s;
+    font-family: var(--font-family-heading); /* Use Roboto */
 }
 .icon-button:hover {
     background-color: #163e4f; /* Darker blue */
 }
 .icon-button i {
-    font-size: 1.5rem; /* Size of the LinkedIn icon */
+    font-size: 1.2rem; /* Adjusted size of the LinkedIn icon */
 }
 
 /* --- Right Main Content --- */
@@ -137,6 +142,9 @@ section {
 }
 section:last-child {
     padding-bottom: 0;
+}
+h2, h3, h4 {
+    font-family: var(--font-family-heading); /* Use Roboto */
 }
 h2 {
     font-size: 2rem;
@@ -166,6 +174,7 @@ h4 a:hover {
 }
 p {
     line-height: 1.8;
+    font-size: 1.1rem;
 }
 
 /* --- Responsive for Mobile --- */
@@ -176,6 +185,13 @@ p {
     }
     .sidebar {
         width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    .sidebar-buttons {
+        flex-grow: 1;
     }
     .header-content h1 {
         font-size: 2.5rem;
