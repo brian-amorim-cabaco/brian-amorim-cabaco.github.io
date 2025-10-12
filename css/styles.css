@@ -23,7 +23,7 @@
 body {
   font-family: "Newsreader", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   padding-top: 54px;
-  color: #868e96;
+  color: #495057;
 }
 @media (min-width: 992px) {
   body {
@@ -42,6 +42,7 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   font-size: 3.8rem;
   line-height: 3rem;
+  margin-bottom: 1.5rem; /* This is the new line you're adding */
 }
 
 h2 {
@@ -61,7 +62,7 @@ p.lead {
   text-transform: uppercase;
   font-weight: 500;
   font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 
 .social-icons a {
@@ -154,6 +155,8 @@ p.lead {
 section.resume-section {
   display: flex; /* This is new! */
   align-items: center; /* This is new! */
+  padding-left: 3rem;   /* This is a new line */
+  padding-right: 3rem;  /* This is a new line */
   padding-bottom: 5rem !important;
   max-width: 75rem;
 }
