@@ -1,7 +1,8 @@
 /* --- Variables (Control Panel) --- */
 :root {
     --primary-blue: #226e93; /* The nice blue from the precedent */
-    --light-grey: #f2f2f2;
+    --light-grey-bg: #f9f9f9;
+    --border-color: #e0e0e0;
     --dark-text: #212121;
     --medium-text: #5f5f5f;
     --font-family: 'Lato', sans-serif;
@@ -12,243 +13,167 @@ body {
     margin: 0;
     font-family: var(--font-family);
     color: var(--dark-text);
-    background-color: var(--light-grey); /* Changed from #fff to var(--light-grey) */
+    background-color: var(--light-grey-bg); /* Light grey background for the page */
 }
 
-* {
-    box-sizing: border-box;
-}
-
-/* --- Two-Column Layout --- */
-.page-wrapper {
-    display: flex;
-    /* min-height: 100vh; -- REMOVED */
-}
-
-.sidebar {
-    width: 180px; /* Make the sidebar narrower */
-    background-color: var(--light-grey);
-    border-right: 1px solid #e0e0e0;
-    padding: 2.5rem 1.5rem; /* Adjust padding */
-    /* position: fixed; -- REMOVED */
-    height: auto; /* Allow height to adjust */
-    flex-shrink: 0; /* Prevent sidebar from shrinking */
-}
-
-.main-content {
-    flex-grow: 1;
-    padding: 0;
-}
-.site-title:hover {
-    color: var(--primary-blue);
-}
-
-.main-nav {
-    margin-top: 2rem;
-}
-
-.main-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.main-nav li {
-    margin-bottom: 0.5rem; /* Space between buttons */
-}
-
-.main-nav li a {
-    display: block;
-    padding: 0.75rem 1rem; /* More padding for button look */
-    background-color: #e0e0e0; /* Light grey background for button */
-    color: var(--dark-text);
-    text-decoration: none;
-    font-size: 1rem; /* Slightly smaller font for buttons */
-    font-weight: 400;
-    border-radius: 4px; /* Slightly rounded corners for buttons */
-    transition: background-color 0.2s ease, color 0.2s ease; /* Smooth hover effect */
-}
-
-.main-nav li a:hover {
-    background-color: var(--primary-blue); /* Blue on hover */
-    color: #fff; /* White text on hover */
-}
-
-/* Highlight current page (optional - advanced) */
-/* If you want the current page button to be highlighted,
-   you would add a class like 'active' to the <li> in HTML
-   Example: <li class="active"><a href="#home">Home</a></li> */
-.main-nav li.active a {
-    background-color: var(--primary-blue);
-    color: #fff;
-    font-weight: 700;
-}
-
-/* --- Main Content Header --- */
-.main-header {
-    height: 350px;
-    background-color: #333; /* Fallback color */
-    
-    /* --- IMPORTANT --- */
-    background-image: url('../header-background.jpg');
-    
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    position: relative;
-}
-
-/* Adds a dark overlay to make the text readable */
-.main-header::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background-color: rgba(0, 0, 0, 0.4); 
-}
-
-.header-content {
-    position: relative; /* Sits on top of the overlay */
-    z-index: 2;
-}
-
-.header-content h1 {
-    color: #fff;
-    font-size: 3.5rem;
-    font-weight: 300;
-    letter-spacing: 1px;
-}
-
-/* --- Main Content Sections --- */
-.content-section {
-    padding: 3rem 4rem;
-    border-bottom: 1px solid #e0e0e0;
-}
-
-.about-flex {
-    display: flex;
-    gap: 2rem;
-    align-items: flex-start;
-}
-
-.about-text {
-    flex-grow: 1;
-}
-.about-text p {
-    font-size: 1.1rem;
-    line-height: 1.8;
-}
-
-.about-image img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-.contact-section h2 {
-    margin-top: 0;
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
 }
 
 h2 {
     font-size: 2rem;
     font-weight: 700;
     color: var(--primary-blue);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.5rem;
     margin-bottom: 2rem;
 }
 
+a {
+    color: var(--primary-blue);
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+/* --- Top Navigation Bar --- */
+.main-nav {
+    background-color: #fff;
+    border-bottom: 1px solid var(--border-color);
+    padding: 0.5rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.main-nav a {
+    color: var(--medium-text);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+}
+.main-nav a:hover {
+    color: var(--primary-blue);
+    text-decoration: none;
+}
+
+/* --- Main Header (Landscape Image) --- */
+.main-header {
+    height: 350px;
+    background-image: url('../header-background.jpg'); /* Links to your background image */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.main-header::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4); 
+}
+.header-content {
+    position: relative;
+    text-align: center;
+}
+.header-content h1 {
+    color: #fff;
+    font-size: 3.5rem;
+    font-weight: 300;
+}
+
+/* --- Main Content Sections --- */
+.content-section {
+    background-color: #fff;
+    padding: 3rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--border-color);
+}
+
+/* --- About Section (Image Left, Text Right) --- */
+.about-flex {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+}
+.about-image {
+    flex-shrink: 0;
+}
+.about-image img {
+    width: 150px;
+    height: 150px;
+    border-radius: 4px; /* Slightly rounded square */
+    object-fit: cover;
+}
+.about-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-top: 0;
+}
+
+/* --- Contact Section --- */
+.contact-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.contact-buttons {
+    display: flex;
+    gap: 1rem;
+}
+.icon-button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--primary-blue);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+.icon-button:hover {
+    background-color: #163e4f; /* Darker blue */
+    color: #fff;
+    text-decoration: none;
+}
+
+/* --- Research Section --- */
 .paper {
     margin-bottom: 2rem;
 }
-
 .paper h3 {
     font-size: 1.3rem;
     color: var(--dark-text);
     margin-bottom: 0.5rem;
 }
-.paper h3 a:hover {
-    color: var(--primary-blue);
-    text-decoration: none;
-}
 
 /* --- Responsive for Mobile --- */
-@media (max-width: 900px) {
-    /* The header will still be full width */
-
-    .page-wrapper {
-        flex-direction: column; /* Stack sidebar and main content vertically */
-    }
-
-    .sidebar {
-        width: 100%; /* Sidebar takes full width */
-        padding: 1.5rem 1rem;
-        border-right: none;
-        border-bottom: 1px solid #e0e0e0; /* Add bottom border */
-        text-align: center;
-    }
-
-    .main-nav ul {
-        display: flex; /* Make buttons horizontal */
-        justify-content: center;
-        flex-wrap: wrap; /* Allow buttons to wrap */
-    }
-
-    .main-nav li {
-        margin: 0.25rem 0.5rem; /* Space buttons horizontally */
-    }
-
-    .main-content {
-        margin-left: 0; /* No left margin on mobile */
-    }
-
-    .main-header h1 {
-        font-size: 2.5rem; /* Smaller header title on mobile */
-    }
-
-    .content-section {
-        padding: 2rem 1.5rem; /* Reduce padding on mobile */
-    }
-
-    .about-flex {
-        flex-direction: column; /* Stack image and text vertically */
+@media (max-width: 768px) {
+    .about-flex, .contact-section {
+        flex-direction: column;
         align-items: center;
         text-align: center;
         gap: 1.5rem;
     }
-
-    .about-image img {
-        width: 100px; /* Smaller headshot on mobile */
-        height: 100px;
+    .header-content h1 {
+        font-size: 2.5rem;
     }
-}
-* New styles for the about section */
-.about-section {
-    padding-top: 2rem; /* Reduce padding at the top of the about section */
-}
-
-.about-flex {
-    display: flex;
-    gap: 2.5rem; /* Space between image and text */
-    align-items: flex-start; /* Align items to the top */
-}
-
-.about-image {
-    flex-shrink: 0; /* Prevent image from shrinking */
-    text-align: center; /* Center the image if it's smaller */
-}
-
-.about-image img {
-    width: 140px; /* Size for the headshot in main content */
-    height: 140px;
-    border-radius: 4px; /* Slightly rounded corners for the square */
-    object-fit: cover;
-    border: 1px solid #e0e0e0; /* Subtle border */
-}
-
-.about-text {
-    flex-grow: 1; /* Allow text to take up remaining space */
-    line-height: 1.7; /* Improve readability */
-    font-size: 1.05rem;
+    .content-section {
+        padding: 2rem 1.5rem;
+    }
 }
