@@ -1,183 +1,60 @@
+/* Main color and font variables for the website */
 :root {
-  --bs-primary: #001146;
-  --bs-primary-rgb: 128, 0, 32;
-  --bs-secondary: #6c757d;
-  --bs-secondary-rgb: 108, 117, 125;
-  --bs-success: #198754;
-  --bs-success-rgb: 25, 135, 84;
-  --bs-info: #0dcaf0;
-  --bs-info-rgb: 13, 202, 240;
-  --bs-warning: #ffc107;
-  --bs-warning-rgb: 255, 193, 7;
-  --bs-danger: #dc3545;
-  --bs-danger-rgb: 220, 53, 69;
-  --bs-light: #f8f9fa;
-  --bs-light-rgb: 248, 249, 250;
+  --bs-primary: #001146; /* Your current dark blue theme color */
   --bs-dark: #212529;
-  --bs-dark-rgb: 33, 37, 41;
-  --bs-font-sans-serif: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --bs-font-sans-serif: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
 }
 
+/* Basic styles for the whole page */
 body {
-  font-family: "Newsreader", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  padding-top: 54px;
-  color: #414241;
-}
-@media (min-width: 992px) {
-  body {
-    padding-top: 0;
-    padding-left: 17rem;
-  }
+  font-family: "Newsreader", serif;
+  color: #414241; /* Dark grey for main text */
 }
 
+/* General heading styles (H1, H2, etc.) */
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: "Roboto", sans-serif;
   font-weight: 700;
   text-transform: uppercase;
-  color: #414241;
-}
-
-h1 {
-  font-size: 2.8rem;
-  line-height: 3rem;
-  margin-bottom: 4rem; /* This is the new line you're adding */
+  color: #414241; /* Dark grey for headings */
 }
 
 h2 {
   font-size: 3.5rem;
 }
 
-h3 {
-  font-size: 2rem;
+p {
+    line-height: 1.7; /* Adds nice spacing between lines of text */
 }
 
-p.lead {
-  font-size: 1.15rem;
-  font-weight: 400;
-}
-
+/* Style for the line under the main name */
 .subheading {
   text-transform: uppercase;
   font-weight: 500;
-  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: "Roboto", sans-serif;
   font-size: 1rem;
 }
 
-.social-icons a {
-  display: inline-block;
-  height: 3.5rem;
-  width: 3.5rem;
-  background-color: #495057;
-  color: #fff !important;
-  border-radius: 100%;
-  text-align: center;
-  font-size: 1.5rem;
-  line-height: 3.5rem;
-  margin-right: 1rem;
-}
-
-.social-icons a:last-child {
-  margin-right: 0;
-}
-
-.social-icons a:hover {
-  background-color: var(--bs-primary);
-}
-
-.dev-icons {
-  font-size: 3rem;
-}
-
-.dev-icons .list-inline-item i:hover {
-  color: var(--bs-primary);
-}
-
-#sideNav .navbar-nav .nav-item .nav-link {
-  font-weight: 800;
-  letter-spacing: 0.05rem;
-  text-transform: uppercase;
-}
-
-#sideNav .navbar-toggler:focus {
-  outline-color: #d48a6e;
-}
-/* Add space at the top of the body so the new navbar doesn't cover the content */
-body {
-    padding-top: 5rem;
-}
-
-/* Style the new small profile image in the top bar */
-.img-profile-top {
-    height: 2.5rem; /* Controls the height of the image */
-    width: 2.5rem;  /* Controls the width of the image */
-    margin-right: 0.5rem; /* Adds a little space between the image and the name */
-}
-
-/* Keep the main content centered and with comfortable padding */
-section.resume-section {
-    padding-top: 5rem !important;
-    padding-bottom: 5rem !important;
-}
-
-
-}
-
-.bg-primary {
-    background-color: var(--bs-primary) !important;
-}
-
-.text-primary {
-    color: var(--bs-primary) !important;
-}
-
-section.resume-section {
-  display: flex; /* This is new! */
-  align-items: center; /* This is new! */
-  padding-left: 3rem;   /* This is a new line */
-  padding-right: 3rem;  /* This is a new line */
-  padding-bottom: 5rem !important;
-  max-width: 75rem;
-}
-
-section.resume-section .resume-section-content {
-  width: 100%;
-}
-
-@media (min-width: 768px) {
-  section.resume-section {
-    min-height: 100vh;
-  }
-}
-
-@media (min-width: 992px) {
-  section.resume-section {
-    padding-top: 5rem !important;
-    padding-bottom: 3rem !important;
-  }
-}
-
+/* Basic link style */
 a {
     color: var(--bs-primary);
 }
 
-a:hover, a:focus, a:active {
-    color: #6d0016; /* A darker version of your burgundy */
-}
-/* This new rule makes the navigation links white */
-#sideNav .navbar-nav .nav-item .nav-link {
-    color: #fff; 
-}
-/* Custom rule for our primary buttons */
+/* Style for buttons */
 .btn-primary {
-    background-color: var(--bs-primary) !important; /* Force the background to be our burgundy */
-    border-color: var(--bs-primary) !important;     /* Force the border to be our burgundy */
-    border-radius: 0.5rem;                           /* Keep the slightly rounded corners */
+    background-color: var(--bs-primary) !important;
+    border-color: var(--bs-primary) !important;
+    border-radius: 0.5rem;
 }
 
-/* Make the button slightly darker on hover */
 .btn-primary:hover {
-    background-color: #6d0016 !important; /* This is a darker shade of burgundy */
-    border-color: #6d0016 !important;
+    background-color: #000b2d !important; /* A darker version of your blue */
+    border-color: #000b2d !important;
+}
+
+/* The main content sections (About, Research, etc.) */
+section.resume-section .resume-section-content {
+  width: 100%;
+  max-width: 75rem; /* Prevents text from becoming too wide on large screens */
 }
