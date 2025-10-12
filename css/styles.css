@@ -106,9 +106,9 @@ body {
     display: flex;
     flex-direction: column; /* Stack buttons vertically */
     gap: 0.5rem; /* Space between buttons */
+    align-items: center; /* This is the new line you're adding! */
 }
 .icon-button {
-    width: 100%; /* Make buttons full width of sidebar */
     height: auto;
     background-color: var(--primary-blue);
     color: #fff;
