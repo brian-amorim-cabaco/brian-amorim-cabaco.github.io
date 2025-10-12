@@ -186,7 +186,15 @@ a:hover, a:focus, a:active {
 #sideNav .navbar-nav .nav-item .nav-link {
     color: #fff; 
 }
-/* Custom rule to make our new buttons more square-ish */
+/* Custom rule for our primary buttons */
 .btn-primary {
-    border-radius: 0.5rem !important; /* Slightly rounded corners, or 0 for sharp square */
+    background-color: var(--bs-primary) !important; /* Force the background to be our burgundy */
+    border-color: var(--bs-primary) !important;     /* Force the border to be our burgundy */
+    border-radius: 0.5rem;                           /* Keep the slightly rounded corners */
+}
+
+/* Make the button slightly darker on hover */
+.btn-primary:hover {
+    background-color: #6d0016 !important; /* This is a darker shade of burgundy */
+    border-color: #6d0016 !important;
 }
