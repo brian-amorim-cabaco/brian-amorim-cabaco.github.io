@@ -37,15 +37,25 @@
       border-radius:16px; padding:22px; background:var(--card);
       color:#ffffff; /* sidebar text */
     }
-    .head{ display:flex; gap:16px; align-items:center; margin-bottom:10px; }
-    .head img{width:84px; height:84px; border-radius:14px; object-fit:cover; border:1px solid rgba(255,255,255,0.35)}
-    h1{font-size:28px; line-height:1.2; margin:0}
-    .tagline{color:#ffe3ea; font-size:14px}
-    .chips{display:flex; flex-wrap:wrap; gap:8px; margin-top:10px}
-    .chip{
-      font-size:12px; padding:4px 10px; border:1px solid rgba(255,255,255,0.35);
-      border-radius:999px; background:rgba(255,255,255,0.08); color:#fff;
-    }
+    /* Sidebar header: photo above name, centered */
+.head{
+  display:flex;
+  flex-direction:column;       /* put image on top, text below */
+  gap:12px;
+  align-items:center;
+  margin-bottom:14px;
+}
+
+/* Bigger, circular headshot inside the burgundy card */
+.head img{
+  width:140px;                 /* try 140–180 if you want even bigger */
+  height:140px;
+  border-radius:999px;         /* perfect circle */
+  object-fit:cover;            /* crops to fill circle nicely */
+  border:2px solid rgba(255,255,255,0.5);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+}
+
     .links{display:flex; flex-wrap:wrap; gap:8px; margin-top:12px}
     .pill{
       font-size:13px; padding:6px 10px; border:1px solid rgba(255,255,255,0.35);
