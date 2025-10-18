@@ -313,6 +313,7 @@ body.dark-mode .sidebar-image {
         margin-bottom: 0;
         margin-left: auto;
         margin-right: auto;
+        border: 3px solid var(--primary-blue); /* Ensure border on mobile */
     }
     .sidebar-buttons {
         flex-direction: column; /* Stack buttons vertically on mobile */
@@ -326,7 +327,7 @@ body.dark-mode .sidebar-image {
     .new-icon-button {
         padding: 0.75rem 1.2rem;
         font-size: 1rem;
-        width: 216px; /* Match desktop size */
+        width: 240px; /* Wider on mobile to prevent text wrapping */
         max-width: calc(100vw - 2rem); /* Prevent overflow on very small screens */
         margin: 0 auto; /* Center each button */
     }
@@ -358,6 +359,7 @@ body.dark-mode .sidebar-image {
     }
     .sub-nav a {
         font-size: 0.8rem; /* Slightly smaller text */
+        color: var(--primary-blue); /* Ensure primary blue on mobile */
     }
     .theme-toggle {
         top: 1rem;
@@ -376,6 +378,7 @@ body.dark-mode .sidebar-image {
     }
     .sub-nav a {
         font-size: 0.75rem; /* Smaller text for tiny screens */
+        color: var(--primary-blue); /* Ensure primary blue on small screens */
     }
     .header-content h1 {
         font-size: 2rem; /* Smaller font to help wrapping */
@@ -386,9 +389,10 @@ body.dark-mode .sidebar-image {
     .sidebar-image {
         width: 180px; /* Slightly smaller on very small screens */
         height: 180px;
+        border: 3px solid var(--primary-blue); /* Ensure border on small screens */
     }
     .new-icon-button {
-        width: 180px; /* Match smaller headshot */
+        width: 220px; /* Still wider than headshot to prevent text wrapping */
     }
     .main-header {
         height: 300px; /* Slightly shorter header on very small screens */
