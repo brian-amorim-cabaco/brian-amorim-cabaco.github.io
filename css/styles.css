@@ -170,7 +170,7 @@ body.dark-mode .theme-toggle:hover {
     height: 216px;
     border-radius: 50%; /* Changed to circle */
     object-fit: cover;
-    border: 4px solid var(--primary-blue); /* Match button borders */
+    border: 3px solid var(--primary-blue); /* Matches title colors */
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     margin-bottom: 1.5rem;
 }
