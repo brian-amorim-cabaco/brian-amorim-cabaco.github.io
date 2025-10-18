@@ -1,118 +1,257 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brian Amorim Cabaço - PhD Candidate</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-   <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,700;1,6..72,400&family=Roboto:wght@700&display=swap" rel="stylesheet">
-    
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+/* --- Variables (Control Panel) --- */
+:root {
+    --primary-blue: #003366; /* Dark navy blue */
+    --light-grey-bg: #ffffff; /* Pure white background */
+    --border-color: #e0e0e0;
+    --dark-text: #212121;
+    --medium-text: #5f5f5f;
+    --font-family-body: 'Newsreader', serif;
+    --font-family-heading: 'Roboto', sans-serif;
+}
 
-    <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
+/* --- General Styles --- */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 60px; 
+}
+body {
+    margin: 0;
+    font-family: var(--font-family-body);
+    color: var(--dark-text);
+    background-color: var(--light-grey-bg);
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
 
-    <header class="main-header">
-        <div class="header-content">
-            <h1>Brian Amorim Cabaço</h1>
-        </div>
-    </header>
+/* --- Main Header (Landscape Image) --- */
+.main-header {
+    height: 350px;
+    background-image: url('../header-background.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.main-header::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4); 
+}
+.header-content {
+    position: relative;
+    text-align: center;
+}
+.header-content h1 {
+    color: #fff;
+    font-size: 3.5rem;
+    font-weight: 300;
+    font-family: var(--font-family-heading);
+}
 
-    <nav class="sub-nav">
-        <ul>
-    <li><a href="#about">About</a></li>
-    <li><a href="#job-market-paper">Job Market Paper</a></li>
-    <li><a href="#working-papers">Working Papers</a></li>
-    <li><a href="#work-in-progress">Work in Progress</a></li>
-    <li><a href="#teaching">Teaching</a></li>
-</ul>
-    </nav>
+/* --- Sticky Sub-Navigation Bar --- */
+.sub-nav {
+    background-color: #fff;
+    border-bottom: 1px solid var(--border-color);
+    padding: 0.5rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+.sub-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap; /* Allow wrapping on mobile */
+}
+.sub-nav a {
+    color: var(--medium-text);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    font-family: var(--font-family-heading);
+}
+.sub-nav a:hover {
+    color: var(--primary-blue);
+}
 
-    <div class="page-container">
-        
-        <aside class="sidebar">
-            <img src="headshot.jpg" alt="Brian Amorim Cabaço" class="sidebar-image">
-            <div class="sidebar-buttons">
-    <a href="cv_academic.pdf" class="new-icon-button" aria-label="Academic CV">
-        Academic CV <i class="fas fa-file-pdf"></i>
-    </a>
-    <a href="cv_professional.pdf" class="new-icon-button" aria-label="Professional CV">
-        Professional CV <i class="fas fa-file-pdf"></i>
-    </a>
-    <a href="mailto:brian.cabaco.17@ucl.ac.uk.com" class="new-icon-button" aria-label="Email Brian">
-        Email <i class="fas fa-envelope"></i>
-    </a>
-    <a href="https://www.linkedin.com/in/brian-amorim-cabaco/" class="new-icon-button" target="_blank" aria-label="LinkedIn Profile">
-        LinkedIn <i class="fa-brands fa-linkedin-in"></i>
-    </a>
-</div>
-        </aside>
+/* --- Two-Column Layout --- */
+.page-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 2rem auto;
+    gap: 2rem;
+    padding: 0 1rem; /* Add padding on sides to prevent edge overflow */
+    box-sizing: border-box;
+}
 
-      <main class="main-content">
-    
-    <section id="about">
-        <h2>About</h2>
-        <p>
-            I am a PhD Candidate in Economics at University College London (UCL) on the Job Market this academic year 2025-26. My research interests are in macroeconomics and time series econometrics.
-        </p>
-    </section>
+/* --- Left Sidebar --- */
+.sidebar {
+    width: 220px;
+    flex-shrink: 0;
+    text-align: center;
+    padding-top: 1rem;
+}
+.sidebar-image {
+    width: 188px;
+    height: 188px;
+    border-radius: 50%; /* Changed to circle */
+    object-fit: cover;
+    border: 4px solid #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    margin-bottom: 1.5rem;
+}
+.sidebar-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+}
+/* New Button Style */
+.new-icon-button {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center content horizontally */
+    gap: 0.5rem;
+    padding: 0.75rem 1.2rem;
+    background-color: transparent;
+    color: var(--primary-blue);
+    border: 2px solid var(--primary-blue);
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    font-family: var(--font-family-heading);
+    transition: all 0.2s ease-in-out;
+    width: 188px; /* Match headshot width */
+    box-sizing: border-box; /* Include padding and border in width */
+}
+.new-icon-button:hover {
+    background-color: var(--primary-blue);
+    color: #fff;
+    text-decoration: none;
+}
+.new-icon-button i {
+    font-size: 1.2rem;
+}
 
-    <section id="job-market-paper">
-        <h2>Job Market Paper</h2>
-        <div class="paper">
-            <h4><a href="#">The Macroeconomic Effects of M&A Activity</a></h4>
-            <p>
-                <em>Abstract coming soon.</em>
-            </p>
-        </div>
-    </section>
+/* --- Right Main Content --- */
+.main-content {
+    flex-grow: 1;
+    background-color: #fff;
+    padding: 2.5rem;
+    /* Removed border */
+}
+section {
+    padding-bottom: 2rem;
+}
+section:last-child {
+    padding-bottom: 0;
+}
+h2, h3, h4 {
+    font-family: var(--font-family-heading);
+}
+h2 {
+    font-size: 2rem;
+    color: var(--primary-blue);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.5rem;
+    margin: 0 0 1.5rem 0;
+}
+h3 {
+    font-size: 1.5rem;
+    color: var(--dark-text);
+    margin-top: 2.5rem;
+}
+.work-in-progress {
+    margin-top: 3rem;
+}
+h4 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+h4 a {
+    color: var(--dark-text);
+}
+h4 a:hover {
+    color: var(--primary-blue);
+    text-decoration: none;
+}
+p {
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+.main-content p {
+    text-align: justify;
+}
 
-    <section id="working-papers">
-        <h2>Working Papers</h2>
-        <div class="paper">
-            <h4><a href="#">"When Antitrust Comes to Town"</a> with Morten O. Ravn</h4>
-            <p>
-                <strong>Abstract:</strong> In this paper we investigate the response of equity returns to antitrust investigations carried out by the US Department of Justice and the Federal Trade Commission. Firstly, we provide an extensive narrative account of antitrust action in the United States since the 1950s. Then, we motivate our empirical analysis on the basis of an oligopoly model of industry competition. We show that publicly traded firms pursued for antitrust violations typically experience negative excess equity returns while their competitors experience positive excess returns in the days following the announcement of antitrust investigations. We show that the estimated effects exhibit substantial variations over time, and in particular that antitrust action has had a substantially smaller impact on equity returns since the 1980s. On the other hand, the political affiliation of sitting US presidents does not correlate with neither the number of antitrust cases initiated nor their impact on equity valuations. Finally, we also show that firms typically pursued for antitrust violations are larger than their (publicly traded) competitors, a result consistent with simply predictions from theory.
-            </p>
-        </div>
-        <div class="paper">
-            <h4><a href="#">"The Macroeconomic Effects of Currency Movements"</a></h4>
-            <p>
-                <strong>Abstract:</strong> In this paper, I provide empirical estimates on the effects of exchange rate fluctuations on macroeconomic variables. Using microeconomic data on financial funds equity holdings, I derive a measure of idiosyncratic equity flows plausibly exogenous with respect to other sources of macroeconomic fluctuations. Focusing on South Africa, I show that the currency paradigms advanced by economists since the 1960s have failed to account for the idiosyncrasies of emerging market economies. In these countries, corporates and governments contract large liabilities denominated in foreign currencies, principally the USD. Therefore, bilateral appreciations against the USD lower the local value of these debts, spurring higher credit demand and supply. In the South African case, I show that these credit channels are highly relevant to understand the effects of currency movements in the ZAR/USD. I estimate that an appreciation of the South African Rand against the USD is inflationary and leads to an expansion in output and credit. The responses of these variables are strongly reminiscent of the typical macroeconomic responses following credit shocks, thereby validating the existence and importance of the exchange rate credit channel. Given that the scale of USD borrowing in most emerging markets has steadily increased over the 2010s, my estimates effectively place a lower bound on the credit channel of exchange rates.
-            </p>
-        </div>
-        <div class="paper">
-            <h4><a href="#">"The Aggregate Effects of Changes in Market Power in the United States"</a> with Morten O. Ravn</h4>
-            <p>
-                <strong>Abstract:</strong> We estimate the dynamic causal effects of changes in aggregate markups using an instrumental variables approach. Specifically, we build a proxy variable for changes in market power on the basis of the asset price implications of antitrust investigations. Across a wide range of different markup series proposed in the literature, we find that rises in market power are strongly expansionary and lead to persistent rises in GDP, consumption, and investment. Furthermore, changes in markups explain up to 30% of business cycle fluctuations. As expected, we obtain very similar but opposite results when instrumenting the labour of share output instead. We link our findings with a growing literature on markup reallocation and the associated rises in aggregate productivity these induce.
-            </p>
-        </div>
-    </section>
 
-    <section id="work-in-progress">
-        <h2>Work in Progress</h2>
-        <div class="paper">
-            <h4>"The Macroeconomic Effects of Monetary Policy Instruments"</h4>
-            <p>
-                <strong>Abstract:</strong> Following the Great Recession, central banks across Europe and North America have had to experiment with new unconventional monetary policy instruments to stimulate economic activity and achieve their inflation targets. Given the recency of these policies, there is only but scant causal empirical evidence on the impact these measures have had on economic aggregates, and structural models do not necessarily agree on the effects of forward guidance and large-scale asset purchases. Unfortunately, it is unlikely that current identification strategies in the semi-structural macroeconometric literature might provide useful guidance on the aggregate implications of the different dimensions of monetary policy; concurrently, persistent disagreements in the structural literature complicate policy counterfactual analysis which is paramount to understanding the effectiveness these measures have had. This paper aims to address these issues in three steps: firstly, I develop a novel GMM-based identification strategy for SVAR models allowing to combine moments derived from short- and long-run restrictions, external variables, heteroskedascticity, and non-Gaussianity. Secondly, I apply the above methodology to empirically identify the causal effects of different monetary policy dimensions in the Euro area and the United States. Finally, I explore policy counterfactuals using the above empirical estimates along with additional structural assumptions.
-            </p>
-        </div>
-    </section>
+/* --- Responsive for Mobile --- */
+@media (max-width: 900px) {
+    .page-container {
+        flex-direction: column;
+        margin-top: 1rem;
+        gap: 1rem;
+        padding: 0 0.5rem; /* Less padding on mobile */
+    }
+    .sidebar {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem;
+        background-color: #fff;
+        /* Removed border */
+        box-shadow: none;
+        order: -1;
+        margin-bottom: 1.5rem;
+    }
+    .sidebar-image {
+        margin-bottom: 0;
+    }
+    .sidebar-buttons {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+    .new-icon-button {
+        padding: 0.5rem 0.8rem;
+        font-size: 0.9rem;
+        width: 165px; /* Proportional width for mobile */
+    }
+    .header-content h1 {
+        font-size: 2.5rem;
+    }
+    .main-content {
+        padding: 1.5rem;
+    }
+    /* Navigation improvements for mobile */
+    .sub-nav {
+        padding: 0.5rem 1rem; /* Add side padding */
+    }
+    .sub-nav ul {
+        gap: 0.8rem 1.5rem; /* Reduce gap on mobile: vertical horizontal */
+    }
+    .sub-nav a {
+        font-size: 0.8rem; /* Slightly smaller text */
+    }
+}
 
-    <section id="teaching">
-        <h2>Teaching</h2>
-        <ul>
-            <li>MSc Macroeconomics, Prof. Vincent Sterk, 2020-Present</li>
-            <li>Bsc Macroeconomic Theory and Policy, Prof. Wendy Carlin and Prof. Wei Cui, 2020-2021</li>
-        </ul>
-    </section>
-
-</main>
-        </main>
-    </div>
-
-</body>
-</html>
+/* --- Very small screens --- */
+@media (max-width: 600px) {
+    .sub-nav ul {
+        gap: 0.6rem 1rem; /* Even smaller gaps */
+        padding: 0 0.5rem;
+    }
+    .sub-nav a {
+        font-size: 0.75rem; /* Smaller text for tiny screens */
+    }
+}
