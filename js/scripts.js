@@ -1,25 +1,32 @@
-window.addEventListener('DOMContentLoaded', event => {
-
-    // Activate Bootstrap scrollspy on the main nav element
-    const sideNav = document.body.querySelector('#sideNav');
-    if (sideNav) {
-        new bootstrap.ScrollSpy(document.body, {
-            target: '#sideNav',
-            offset: 74,
-        });
-    };
-
-    // Collapse responsive navbar when toggler is visible
-    const navbarToggler = document.body.querySelector('.navbar-toggler');
-    const responsiveNavItems = [].slice.call(
-        document.querySelectorAll('#navbarResponsive .nav-link')
-    );
-    responsiveNavItems.map(function (responsiveNavItem) {
-        responsiveNavItem.addEventListener('click', () => {
-            if (window.getComputedStyle(navbarToggler).display !== 'none') {
-                navbarToggler.click();
-            }
-        });
+// Theme Toggle Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const themeToggle = document.getElementById('theme-toggle');
+    const body = document.body;
+    const icon = themeToggle.querySelector('i');
+    
+    // Check for saved theme preference or default to light mode
+    const currentTheme = localStorage.getItem('theme') || 'light';
+    
+    // Apply saved theme on page load
+    if (currentTheme === 'dark') {
+        body.classList.add('dark-mode');
+        icon.classList.remove('fa-moon');
+        icon.classList.add('fa-sun');
+    }
+    
+    // Toggle theme on button click
+    themeToggle.addEventListener('click', function() {
+        body.classList.toggle('dark-mode');
+        
+        // Update icon
+        if (body.classList.contains('dark-mode')) {
+            icon.classList.remove('fa-moon');
+            icon.classList.add('fa-sun');
+            localStorage.setItem('theme', 'dark');
+        } else {
+            icon.classList.remove('fa-sun');
+            icon.classList.add('fa-moon');
+            localStorage.setItem('theme', 'light');
+        }
     });
-
 });
