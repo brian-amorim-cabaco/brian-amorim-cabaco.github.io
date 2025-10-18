@@ -42,7 +42,7 @@ body {
 .main-header {
     height: 350px;
     background-image: url('../header-background.jpg');
-    background-size: cover;
+    background-size: 100% auto;
     background-position: center;
     display: flex;
     align-items: center;
