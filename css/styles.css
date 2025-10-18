@@ -163,6 +163,9 @@ body.dark-mode .theme-toggle:hover {
     padding-top: 1rem;
     background-color: transparent; /* Use body background */
     transition: background-color 0.3s ease;
+    position: sticky;
+    top: 1rem;
+    align-self: flex-start;
 }
 .sidebar-image {
     width: 216px;
@@ -312,6 +315,7 @@ body.dark-mode .sidebar-image {
         margin: 0 auto 1.5rem auto; /* Center with auto margins */
         box-sizing: border-box; /* Include padding in width */
         overflow-x: hidden;
+        position: relative; /* Remove sticky on mobile */
     }
     .sidebar-image {
         width: 260px; /* Larger on mobile to match button width */
