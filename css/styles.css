@@ -310,6 +310,8 @@ body.dark-mode .sidebar-image {
         overflow-x: hidden;
     }
     .sidebar-image {
+        width: 260px; /* Larger on mobile to match button width */
+        height: 260px;
         margin-bottom: 0;
         margin-left: auto;
         margin-right: auto;
@@ -327,7 +329,7 @@ body.dark-mode .sidebar-image {
     .new-icon-button {
         padding: 0.75rem 1.2rem;
         font-size: 1rem;
-        width: 240px; /* Wider on mobile to prevent text wrapping */
+        width: 260px; /* Wider on mobile to prevent text wrapping */
         max-width: calc(100vw - 2rem); /* Prevent overflow on very small screens */
         margin: 0 auto; /* Center each button */
     }
@@ -387,12 +389,12 @@ body.dark-mode .sidebar-image {
         line-height: 1.2;
     }
     .sidebar-image {
-        width: 180px; /* Slightly smaller on very small screens */
-        height: 180px;
+        width: 240px; /* Match button width on small screens */
+        height: 240px;
         border: 3px solid var(--primary-blue); /* Ensure border on small screens */
     }
     .new-icon-button {
-        width: 220px; /* Still wider than headshot to prevent text wrapping */
+        width: 240px; /* Wider to prevent text wrapping */
     }
     .main-header {
         height: 300px; /* Slightly shorter header on very small screens */
