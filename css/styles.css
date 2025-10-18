@@ -27,7 +27,7 @@ body.dark-mode {
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 60px;
-    max-width: 100vw;
+    width: 100%;
 }
 body {
     margin: 0;
@@ -35,7 +35,6 @@ body {
     color: var(--dark-text);
     background-color: var(--light-grey-bg);
     width: 100%;
-    max-width: 100vw;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -50,7 +49,6 @@ body {
     justify-content: center;
     position: relative;
     width: 100%;
-    max-width: 100vw;
     overflow: hidden;
     box-sizing: border-box;
 }
@@ -122,6 +120,7 @@ body.dark-mode .theme-toggle:hover {
     z-index: 1000;
     transition: background-color 0.3s ease, border-color 0.3s ease;
     width: 100%;
+    box-sizing: border-box;
 }
 .sub-nav ul {
     list-style: none;
@@ -131,7 +130,7 @@ body.dark-mode .theme-toggle:hover {
     justify-content: center;
     gap: 2rem;
     flex-wrap: wrap; /* Allow wrapping on mobile */
-    overflow-x: auto; /* Allow horizontal scroll if needed */
+    max-width: 100%;
 }
 .sub-nav a {
     color: var(--medium-text);
@@ -155,7 +154,6 @@ body.dark-mode .theme-toggle:hover {
     padding: 0 1rem; /* Add padding on sides to prevent edge overflow */
     box-sizing: border-box;
     width: 100%;
-    overflow-x: hidden;
 }
 
 /* --- Left Sidebar --- */
@@ -164,6 +162,7 @@ body.dark-mode .theme-toggle:hover {
     flex-shrink: 0;
     text-align: center;
     padding-top: 1rem;
+    background-color: transparent; /* Use body background */
     transition: background-color 0.3s ease;
 }
 .sidebar-image {
@@ -215,7 +214,9 @@ body.dark-mode .theme-toggle:hover {
     background-color: #fff;
     padding: 2.5rem;
     transition: background-color 0.3s ease, color 0.3s ease;
-    overflow-x: hidden;
+    max-width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
     /* Removed border */
 }
 section {
@@ -268,9 +269,6 @@ body.dark-mode .main-content {
 body.dark-mode .sub-nav {
     background-color: #000000;
 }
-body.dark-mode .sidebar {
-    background-color: #000000;
-}
 body.dark-mode .new-icon-button {
     background-color: transparent;
     border-color: var(--primary-blue);
@@ -295,7 +293,6 @@ body.dark-mode .sidebar-image {
         padding: 0; /* Remove side padding */
         width: 100%;
         max-width: 100vw; /* Prevent overflow */
-        overflow-x: hidden;
     }
     .sidebar {
         width: 100%;
@@ -305,7 +302,7 @@ body.dark-mode .sidebar-image {
         align-items: center;
         gap: 1rem;
         padding: 1rem 0; /* Only vertical padding, no horizontal */
-        background-color: #fff;
+        background-color: transparent; /* Use body background color */
         /* Removed border */
         box-shadow: none;
         order: -1;
@@ -356,17 +353,9 @@ body.dark-mode .sidebar-image {
     /* Navigation improvements for mobile */
     .sub-nav {
         padding: 0.5rem 1rem; /* Add side padding */
-        width: 100%;
-        max-width: 100vw;
-        box-sizing: border-box;
-        overflow-x: hidden;
     }
     .sub-nav ul {
         gap: 0.8rem 1.5rem; /* Reduce gap on mobile: vertical horizontal */
-        width: 100%;
-        max-width: 100%;
-        overflow-x: auto; /* Allow scrolling if really needed */
-        -webkit-overflow-scrolling: touch;
     }
     .sub-nav a {
         font-size: 0.8rem; /* Slightly smaller text */
