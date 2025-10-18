@@ -19,6 +19,7 @@ body {
     font-family: var(--font-family-body);
     color: var(--dark-text);
     background-color: var(--light-grey-bg);
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 /* --- Main Header (Landscape Image) --- */
@@ -57,7 +58,6 @@ body {
     position: sticky;
     top: 0;
     z-index: 1000;
-    overflow-x: auto; /* Allow horizontal scrolling on mobile if needed */
 }
 .sub-nav ul {
     list-style: none;
@@ -66,8 +66,7 @@ body {
     display: flex;
     justify-content: center;
     gap: 2rem;
-    flex-wrap: nowrap; /* Prevent wrapping */
-    min-width: min-content; /* Ensure items don't compress too much */
+    flex-wrap: wrap; /* Allow wrapping on mobile */
 }
 .sub-nav a {
     color: var(--medium-text);
@@ -77,7 +76,6 @@ body {
     letter-spacing: 0.5px;
     text-decoration: none;
     font-family: var(--font-family-heading);
-    white-space: nowrap; /* Prevent text wrapping */
 }
 .sub-nav a:hover {
     color: var(--primary-blue);
@@ -89,6 +87,8 @@ body {
     max-width: 1200px;
     margin: 2rem auto;
     gap: 2rem;
+    padding: 0 1rem; /* Add padding on sides to prevent edge overflow */
+    box-sizing: border-box;
 }
 
 /* --- Left Sidebar --- */
@@ -198,6 +198,7 @@ p {
         flex-direction: column;
         margin-top: 1rem;
         gap: 1rem;
+        padding: 0 0.5rem; /* Less padding on mobile */
     }
     .sidebar {
         width: 100%;
@@ -234,23 +235,23 @@ p {
     }
     /* Navigation improvements for mobile */
     .sub-nav {
-        padding: 0.5rem 0.5rem; /* Add side padding */
+        padding: 0.5rem 1rem; /* Add side padding */
     }
     .sub-nav ul {
-        gap: 1.5rem; /* Reduce gap on mobile */
+        gap: 0.8rem 1.5rem; /* Reduce gap on mobile: vertical horizontal */
     }
     .sub-nav a {
-        font-size: 0.75rem; /* Slightly smaller text */
+        font-size: 0.8rem; /* Slightly smaller text */
     }
 }
 
 /* --- Very small screens --- */
 @media (max-width: 600px) {
     .sub-nav ul {
-        gap: 1rem; /* Even smaller gap */
-        padding: 0 0.5rem; /* Add padding for scroll area */
+        gap: 0.6rem 1rem; /* Even smaller gaps */
+        padding: 0 0.5rem;
     }
     .sub-nav a {
-        font-size: 0.7rem; /* Even smaller text for tiny screens */
+        font-size: 0.75rem; /* Smaller text for tiny screens */
     }
 }
