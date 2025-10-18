@@ -99,8 +99,8 @@ body {
     padding-top: 1rem;
 }
 .sidebar-image {
-    width: 150px;
-    height: 150px;
+    width: 188px;
+    height: 188px;
     border-radius: 50%; /* Changed to circle */
     object-fit: cover;
     border: 4px solid #fff;
@@ -129,7 +129,7 @@ body {
     font-size: 1rem;
     font-family: var(--font-family-heading);
     transition: all 0.2s ease-in-out;
-    width: 160px; /* Fixed width for all buttons */
+    width: 188px; /* Match headshot width */
     box-sizing: border-box; /* Include padding and border in width */
 }
 .new-icon-button:hover {
@@ -225,7 +225,7 @@ p {
     .new-icon-button {
         padding: 0.5rem 0.8rem;
         font-size: 0.9rem;
-        width: 140px; /* Slightly smaller fixed width for mobile */
+        width: 165px; /* Proportional width for mobile */
     }
     .header-content h1 {
         font-size: 2.5rem;
