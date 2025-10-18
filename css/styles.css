@@ -38,12 +38,10 @@ body {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* --- Main Header (Landscape Image) --- */
+/* --- Main Header --- */
 .main-header {
-    height: 350px;
-    background-image: url('../header-background.jpg');
-    background-size: 100% auto;
-    background-position: center bottom;
+    height: 120px;
+    background-color: var(--primary-blue);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -56,7 +54,7 @@ body {
     content: '';
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
-    background-color: rgba(0, 0, 0, 0.4); 
+    background-color: transparent;
 }
 .header-content {
     position: relative;
@@ -65,9 +63,10 @@ body {
 }
 .header-content h1 {
     color: #fff;
-    font-size: 3.5rem;
-    font-weight: 300;
+    font-size: 2.2rem;
+    font-weight: 400;
     font-family: var(--font-family-heading);
+    margin: 0;
 }
 .mobile-break {
     display: none; /* Hide line break on desktop */
@@ -339,7 +338,7 @@ body.dark-mode .sidebar-image {
         margin: 0 auto; /* Center each button */
     }
     .header-content h1 {
-        font-size: 2.5rem;
+        font-size: 1.8rem;
         max-width: none; /* Remove max-width constraint */
         margin: 0 auto;
         word-wrap: break-word;
@@ -388,7 +387,7 @@ body.dark-mode .sidebar-image {
         color: var(--primary-blue); /* Ensure primary blue on small screens */
     }
     .header-content h1 {
-        font-size: 2rem; /* Smaller font to help wrapping */
+        font-size: 1.5rem; /* Smaller font to help wrapping */
         max-width: none; /* Remove max-width */
         margin: 0 auto;
         line-height: 1.2;
@@ -402,6 +401,6 @@ body.dark-mode .sidebar-image {
         width: 240px; /* Wider to prevent text wrapping */
     }
     .main-header {
-        height: 300px; /* Slightly shorter header on very small screens */
+        height: 100px; /* Smaller header on very small screens */
     }
 }
