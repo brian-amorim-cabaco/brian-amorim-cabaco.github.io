@@ -165,7 +165,7 @@ body.dark-mode .theme-toggle:hover {
     background-color: transparent; /* Use body background */
     transition: background-color 0.3s ease;
     position: sticky;
-    top: 60px; /* Accounts for sticky nav bar height */
+    top: 80px; /* Increased to prevent headshot from being cut off */
     align-self: flex-start;
     height: fit-content;
 }
@@ -269,6 +269,13 @@ p {
 }
 .main-content p {
     text-align: justify;
+}
+.main-content ul {
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+.main-content li {
+    margin-bottom: 0.5rem;
 }
 
 /* --- Dark Mode Specific Styles --- */
