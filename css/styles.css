@@ -96,7 +96,7 @@ body {
 .theme-toggle:hover {
     background-color: rgba(255, 255, 255, 0.3);
     border-color: rgba(255, 255, 255, 0.8);
-    transform: scale(1.05);
+    transform: translateY(-50%) scale(1.05);
 }
 .theme-toggle i {
     transition: transform 0.3s ease;
@@ -166,7 +166,7 @@ body.dark-mode .theme-toggle:hover {
     background-color: transparent; /* Use body background */
     transition: background-color 0.3s ease;
     position: sticky;
-    top: calc(0.5rem + 0.5rem + 0.9rem * 1.5 + 1px); /* Matches sub-nav height: top padding + bottom padding + text height + border */
+    top: calc(0.5rem + 0.5rem + 0.9rem * 1.5 + 1px + 1.5rem); /* Sub-nav height + extra spacing */
     align-self: flex-start;
     height: fit-content;
 }
