@@ -161,11 +161,11 @@ body.dark-mode .theme-toggle:hover {
     width: 250px; /* Increased to accommodate larger buttons */
     flex-shrink: 0;
     text-align: center;
-    padding-top: 1rem;
+    padding-top: 0; /* Remove extra padding */
     background-color: transparent; /* Use body background */
     transition: background-color 0.3s ease;
     position: sticky;
-    top: 10px; /* Small gap from top to prevent cropping */
+    top: 60px; /* Accounts for sticky nav bar height */
     align-self: flex-start;
     height: fit-content;
 }
