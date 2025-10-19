@@ -75,7 +75,8 @@ body {
 /* --- Theme Toggle Button --- */
 .theme-toggle {
     position: absolute;
-    top: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
     right: 1.5rem;
     background-color: rgba(255, 255, 255, 0.2);
     border: 2px solid rgba(255, 255, 255, 0.5);
@@ -165,7 +166,7 @@ body.dark-mode .theme-toggle:hover {
     background-color: transparent; /* Use body background */
     transition: background-color 0.3s ease;
     position: sticky;
-    top: 80px; /* Increased to prevent headshot from being cut off */
+    top: calc(0.5rem + 0.5rem + 0.9rem * 1.5 + 1px); /* Matches sub-nav height: top padding + bottom padding + text height + border */
     align-self: flex-start;
     height: fit-content;
 }
@@ -381,7 +382,8 @@ body.dark-mode .sidebar-image {
         color: var(--primary-blue); /* Ensure primary blue on mobile */
     }
     .theme-toggle {
-        top: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
         right: 1rem;
         width: 45px;
         height: 45px;
