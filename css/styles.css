@@ -153,6 +153,7 @@ body.dark-mode .theme-toggle:hover {
     padding: 0 1rem; /* Add padding on sides to prevent edge overflow */
     box-sizing: border-box;
     width: 100%;
+    align-items: flex-start; /* Important for sticky to work */
 }
 
 /* --- Left Sidebar --- */
@@ -164,8 +165,9 @@ body.dark-mode .theme-toggle:hover {
     background-color: transparent; /* Use body background */
     transition: background-color 0.3s ease;
     position: sticky;
-    top: 1rem;
+    top: 10px; /* Small gap from top to prevent cropping */
     align-self: flex-start;
+    height: fit-content;
 }
 .sidebar-image {
     width: 216px;
