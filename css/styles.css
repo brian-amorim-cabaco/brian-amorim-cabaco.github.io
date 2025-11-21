@@ -178,7 +178,7 @@ body.dark-mode .theme-toggle:hover {
     border: 3px solid var(--primary-blue); /* Matches title colors */
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     margin-bottom: 1.5rem;
-    filter: blur(1.0px); /* Subtle Gaussian blur to soften skin details */
+    filter: blur(0.8px); /* Subtle Gaussian blur to soften skin details */
     pointer-events: none; /* Prevents right-click/interactions */
     user-select: none; /* Prevents selection */
 }
@@ -353,7 +353,7 @@ body.dark-mode .sidebar-image {
             margin-left: auto;
             margin-right: auto;
             border: 3px solid var(--primary-blue); /* Ensure border on mobile */
-            filter: blur(1.0px); /* Maintain blur on mobile */
+            filter: blur(0.8px); /* Maintain blur on mobile */
         }
     }
     .sidebar-buttons {
@@ -433,7 +433,7 @@ body.dark-mode .sidebar-image {
             width: 240px; /* Match button width on small screens */
             height: 240px;
             border: 3px solid var(--primary-blue); /* Ensure border on small screens */
-            filter: blur(1.0px); /* Maintain blur on small screens */
+            filter: blur(0.8px); /* Maintain blur on small screens */
         }
     }
     .new-icon-button {
