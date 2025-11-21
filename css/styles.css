@@ -11,7 +11,7 @@
 
 /* Dark mode variables */
 body.dark-mode {
-    --primary-blue: #4a9eff; /* Lighter blue for dark mode */
+    --primary-blue: #9B1B30; /* Red wine color for dark mode */
     --light-grey-bg: #000000; /* Pure black background */
     --border-color: #404040;
     --dark-text: #e0e0e0; /* Light text */
