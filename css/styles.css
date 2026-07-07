@@ -320,8 +320,8 @@ body.dark-mode .sidebar-image {
 @media (max-width: 900px) {
     .page-container {
         flex-direction: column;
-        margin-top: 1rem;
-        gap: 1rem;
+        margin-top: 0.35rem;
+        gap: 0.25rem;
         padding: 0; /* Remove side padding */
         width: 100%;
         max-width: 100vw; /* Prevent overflow */
@@ -332,13 +332,13 @@ body.dark-mode .sidebar-image {
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 1rem;
-        padding: 1rem 0; /* Only vertical padding, no horizontal */
+        gap: 0.75rem;
+        padding: 0.5rem 0 0.25rem; /* Compact vertical spacing on mobile */
         background-color: transparent; /* Use body background color */
         /* Removed border */
         box-shadow: none;
         order: -1;
-        margin: 0 auto 1.5rem auto; /* Center with auto margins */
+        margin: 0 auto; /* Center with auto margins */
         box-sizing: border-box; /* Include padding in width */
         overflow-x: hidden;
         position: relative; /* Remove sticky on mobile */
@@ -380,7 +380,7 @@ body.dark-mode .sidebar-image {
         display: inline; /* Show line break on mobile */
     }
     .main-content {
-        padding: 1.25rem;
+        padding: 0.75rem 1.25rem 1.25rem;
         width: 100%;
         max-width: 100%; /* Prevent overflow */
         box-sizing: border-box;
