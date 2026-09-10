@@ -408,6 +408,7 @@ body.dark-mode .sidebar-image {
         box-sizing: border-box; /* Include padding in width */
         overflow-x: hidden;
         position: relative; /* Remove sticky on mobile */
+        top: 0; /* Reset the desktop sticky offset */
     }
     @media (max-width: 900px) {
         .sidebar-image {
