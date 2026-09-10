@@ -266,7 +266,7 @@ h3 {
 }
 h4 {
     font-size: 1.05rem;
-    margin-bottom: 0.5rem;
+    margin: 0 0 0.35rem;
 }
 h4 a {
     color: var(--dark-text);
@@ -279,6 +279,69 @@ h4 a i {
     color: var(--primary-blue);
     margin-right: 0.5rem;
     font-size: 1rem;
+}
+.paper {
+    margin-bottom: 1.75rem;
+}
+.paper:last-child {
+    margin-bottom: 0;
+}
+.coauthors {
+    color: var(--medium-text);
+    font-size: 0.85rem;
+    line-height: 1.45;
+    margin: 0 0 0.75rem;
+}
+.coauthors a,
+.coauthors a:visited {
+    color: var(--medium-text);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+}
+.coauthors a:hover {
+    color: var(--primary-blue);
+}
+.abstract {
+    margin-top: 0.75rem;
+}
+.abstract summary {
+    align-items: center;
+    background-color: transparent;
+    border: 1.5px solid var(--primary-blue);
+    border-radius: 6px;
+    color: var(--primary-blue);
+    cursor: pointer;
+    display: inline-flex;
+    font-family: var(--font-family-heading);
+    font-size: 0.85rem;
+    font-weight: 700;
+    gap: 0.6rem;
+    list-style: none;
+    padding: 0.45rem 0.7rem;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+.abstract summary::-webkit-details-marker {
+    display: none;
+}
+.abstract summary::after {
+    content: '+';
+    font-size: 1rem;
+    line-height: 1;
+}
+.abstract[open] summary::after {
+    content: '\2212';
+}
+.abstract summary:hover {
+    background-color: var(--primary-blue);
+    color: #fff;
+}
+.abstract summary:focus-visible {
+    outline: 3px solid color-mix(in srgb, var(--primary-blue) 35%, transparent);
+    outline-offset: 3px;
+}
+.abstract p {
+    margin: 0.85rem 0 0;
 }
 p {
     line-height: 1.65;
@@ -309,6 +372,9 @@ body.dark-mode .new-icon-button {
 }
 body.dark-mode .new-icon-button:hover {
     background-color: var(--primary-blue);
+    color: #000000;
+}
+body.dark-mode .abstract summary:hover {
     color: #000000;
 }
 body.dark-mode .sidebar-image {
