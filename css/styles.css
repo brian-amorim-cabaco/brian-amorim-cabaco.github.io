@@ -386,7 +386,7 @@ body.dark-mode .sidebar-image {
 @media (max-width: 900px) {
     .page-container {
         flex-direction: column;
-        margin-top: 1rem;
+        margin-top: 0;
         gap: 1rem;
         padding: 0; /* Remove side padding */
         width: 100%;
@@ -398,8 +398,8 @@ body.dark-mode .sidebar-image {
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 1rem;
-        padding: 1rem 0; /* Only vertical padding, no horizontal */
+        gap: 0.75rem;
+        padding: 0.5rem 0 0.75rem;
         background-color: transparent; /* Use body background color */
         /* Removed border */
         box-shadow: none;
@@ -420,20 +420,27 @@ body.dark-mode .sidebar-image {
         }
     }
     .sidebar-buttons {
-        flex-direction: column; /* Stack buttons vertically on mobile */
-        flex-wrap: nowrap;
-        justify-content: center;
-        align-items: center; /* Center buttons horizontally */
-        gap: 0.8rem;
-        width: 100%;
-        margin: 0 auto; /* Ensure buttons container is centered */
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.65rem;
+        width: min(520px, calc(100% - 2rem));
+        margin: 0 auto;
     }
     .new-icon-button {
-        padding: 0.75rem 1.2rem;
+        min-height: 44px;
+        padding: 0.65rem 0.75rem;
+        font-size: 0.9rem;
+        width: 100%;
+        max-width: none;
+        margin: 0;
+    }
+    .sidebar-buttons .new-icon-button:last-child {
+        grid-column: 1 / -1;
+        justify-self: center;
+        width: calc((100% - 0.65rem) / 2);
+    }
+    .new-icon-button i {
         font-size: 1rem;
-        width: 260px; /* Wider on mobile to prevent text wrapping */
-        max-width: calc(100vw - 2rem); /* Prevent overflow on very small screens */
-        margin: 0 auto; /* Center each button */
     }
     .header-content h1 {
         font-size: 1.55rem;
@@ -512,8 +519,16 @@ body.dark-mode .sidebar-image {
             border: 3px solid var(--primary-blue); /* Ensure border on small screens */
         }
     }
+    .sidebar-buttons {
+        gap: 0.5rem;
+        width: min(480px, calc(100% - 1rem));
+    }
     .new-icon-button {
-        width: 240px; /* Wider to prevent text wrapping */
+        font-size: 0.8rem;
+        padding: 0.6rem;
+    }
+    .sidebar-buttons .new-icon-button:last-child {
+        width: calc((100% - 0.5rem) / 2);
     }
     .main-header {
         height: 100px; /* Smaller header on very small screens */
